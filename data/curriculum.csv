@@ -1,44 +1,44 @@
 Courses,Topic,Duration,Effort,Total Hours Lower Bound,Start Date,End Date Estimate Lower Bound,Total Hours Upper Bound,Start Date,End Date Estimate Upper Bound,Actual End Date,Prerequisites
-Python for Everybody,Intro CS,10 weeks,10 hours/week,100,2022-07-28,2022-09-01,100,2022-07-28,2022-09-01,,-
-Introduction to Computer Science and Programming using Python,Intro CS,9 weeks,15 hours/week,135,2022-09-01,2022-10-18,135,2022-09-01,2022-10-18,,high school algebra
-How to Code - Simple Data,Core Programming,7 weeks,8-10 hours/week,56,2022-10-18,2022-11-06,70,2022-10-18,2022-11-11,,-
-How to Code - Complex Data,Core Programming,6 weeks,8-10 hours/week,48,2022-11-06,2022-11-23,60,2022-11-11,2022-12-02,,How to Code: Simple Data
-"Programming Languages, Part A",Core Programming,5 weeks,4-8 hours/week,20,2022-11-23,2022-11-30,40,2022-12-02,2022-12-16,,How to Code (Hear instructor)
-"Programming Languages, Part B",Core Programming,3 weeks,4-8 hours/week,12,2022-11-30,2022-12-04,24,2022-12-16,2022-12-25,,"Programming Languages, Part A"
-"Programming Languages, Part C",Core Programming,3 weeks,4-8 hours/week,12,2022-12-04,2022-12-09,24,2022-12-25,2023-01-02,,"Programming Languages, Part B"
-Object-Oriented Design,Core Programming,4 weeks,4 hours/week,16,2022-12-09,2022-12-14,16,2023-01-02,2023-01-08,,Basic Java
-Design Patterns,Core Programming,4 weeks,4 hours/week,16,2022-12-14,2022-12-20,16,2023-01-08,2023-01-13,,Object-Oriented Design
-Software Architecture,Core Programming,4 weeks,2-5 hours/week,8,2022-12-20,2022-12-23,20,2023-01-13,2023-01-20,,Design Patterns
-Calculus 1A: Differentiation,Core Math,13 weeks,6-10 hours/week,78,2022-12-23,2023-01-19,130,2023-01-20,2023-03-07,,high school math
-Calculus 1B: Integration,Core Math,13 weeks,5-10 hours/week,65,2023-01-19,2023-02-11,130,2023-03-07,2023-04-21,,Calculus 1A
-Calculus 1C: Coordinate Systems & Infinite Series,Core Math,6 weeks,5-10 hours/week,30,2023-02-11,2023-02-21,60,2023-04-21,2023-05-12,,Calculus 1B
-Mathematics for Computer Science,Core Math,13 weeks,5 hours/week,65,2023-02-21,2023-03-16,65,2023-05-12,2023-06-04,,Calculus 1C
-The Missing Semester of Your CS Education,CS Tools,2 weeks,12 hours/week,24,2023-03-16,2023-03-24,24,2023-06-04,2023-06-12,,-
-Build a Modern Computer from First Principles: From Nand to Tetris,Core Systems,6 weeks,7-13 hours/week,42,2023-03-24,2023-04-08,78,2023-06-12,2023-07-10,,C-like programming language
-Build a Modern Computer from First Principles: Nand to Tetris Part II,Core Systems,6 weeks,12-18 hours/week,72,2023-04-08,2023-05-03,108,2023-07-10,2023-08-17,,"one of these programming languages, From Nand to Tetris Part I"
-Operating Systems: Three Easy Pieces,Core Systems,10-12 weeks,6 hours/week,60,2023-05-03,2023-05-24,72,2023-08-17,2023-09-11,,"algorithms, familiarity with C is useful"
-Computer Networking: a Top-Down Approach,Core Systems,8 weeks,4-12 hours/week,32,2023-05-24,2023-06-04,96,2023-09-11,2023-10-14,,"algebra, probability, basic CS"
-"Divide and Conquer, Sorting and Searching, and Randomized Algorithms",Core Theory,4 weeks,4-8 hours/week,16,2023-06-04,2023-06-10,32,2023-10-14,2023-10-26,,"any programming language, Mathematics for Computer Science"
-"Graph Search, Shortest Paths, and Data Structures",Core Theory,4 weeks,4-8 hours/week,16,2023-06-10,2023-06-16,32,2023-10-26,2023-11-06,,"Divide and Conquer, Sorting and Searching, and Randomized Algorithms"
-"Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming",Core Theory,4 weeks,4-8 hours/week,16,2023-06-16,2023-06-21,32,2023-11-06,2023-11-17,,"Graph Search, Shortest Paths, and Data Structures"
-"Shortest Paths Revisited, NP-Complete Problems and What To Do About Them",Core Theory,4 weeks,4-8 hours/week,16,2023-06-21,2023-06-27,32,2023-11-17,2023-11-28,,"Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming"
-Cybersecurity Fundamentals,Core Security,8 weeks,10-12 hours/week,80,2023-06-27,2023-07-25,96,2023-11-28,2024-01-01,,-
-Principles of Secure Coding,Core Security,4 weeks,4 hours/week,16,2023-07-25,2023-07-30,16,2024-01-01,2024-01-06,,-
-Identifying Security Vulnerabilities,Core Security,4 weeks,4 hours/week,16,2023-07-30,2023-08-05,16,2024-01-06,2024-01-12,,-
-Identifying Security Vulnerabilities in C/C++ Programming or Exploiting and Securing Vulnerabilities in Java Applications,Core Security,4 weeks,5 hours/week,20,2023-08-05,2023-08-12,20,2024-01-12,2024-01-19,,-
-Databases: Modeling and Theory,Core Applications,2 weeks,10 hours/week,20,2023-08-19,2023-08-26,20,2024-01-26,2024-02-02,,core programming
-Databases: Relational Databases and SQL,Core Applications,2 weeks,10 hours/week,20,2023-08-12,2023-08-19,20,2024-01-19,2024-01-26,,core programming
-Databases: Semistructured Data,Core Applications,2 weeks,10 hours/week,20,2023-08-26,2023-09-02,20,2024-02-02,2024-02-09,,core programming
-Machine Learning,Core Applications,11 weeks,4-6 hours/week,44,2023-09-02,2023-09-17,66,2024-02-09,2024-03-03,,linear algebra
-Computer Graphics,Core Applications,6 weeks,12 hours/week,72,2023-09-17,2023-10-13,72,2024-03-03,2024-03-28,,"C++ or Java, linear algebra"
-Software Engineering: Introduction,Core Applications,6 weeks,8-10 hours/week,48,2023-10-13,2023-10-29,60,2024-03-28,2024-04-18,,"Core Programming, and a sizable project"
-"Ethics, Technology and Engineering",Core Ethics,9 weeks,2 hours/week,18,2023-10-29,2023-11-05,18,2024-04-18,2024-04-25,,-
-Intellectual Property Law in Digital Age,Core Ethics,4 weeks,2 hours/week,8,2023-11-05,2023-11-07,8,2024-04-25,2024-04-27,,-
-Data Privacy Fundamentals,Core Ethics,3 weeks,3 hours/week,9,2023-11-07,2023-11-11,9,2024-04-27,2024-04-30,,-
-Parallel Programming,Advanced Programming,4 weeks,6-8 hours/week,24,2023-11-11,2023-11-19,32,2024-04-30,2024-05-12,,Scala programming
-Compilers,Advanced Programming,9 weeks,6-8 hours/week,54,2023-11-19,2023-12-08,72,2024-05-12,2024-06-06,,none
-Introduction to Haskell,Advanced Programming,14 weeks,-,100,2023-12-08,2024-01-12,100,2024-06-06,2024-07-11,,-
-Learn Prolog Now!,Advanced Programming,12 weeks,-,100,2024-01-12,2024-02-16,100,2024-07-11,2024-08-15,,-
-Software Debugging,Advanced Programming,8 weeks,6 hours/week,48,2024-02-16,2024-03-04,48,2024-08-15,2024-09-01,,"Python, object-oriented programming"
-Software Testing,Advanced Programming,4 weeks,6 hours/week,24,2024-03-04,2024-03-12,24,2024-09-01,2024-09-09,,"Python, programming experience"
-Final Project,Final Project,,,100,2024-03-12,2024-04-16,100,2024-09-09,2024-10-14,,
+Python for Everybody,Intro CS,10 weeks,10 hours/week,100,28-07-2022,01-09-2022,100,28-07-2022,01-09-2022,,-
+Introduction to Computer Science and Programming using Python,Intro CS,9 weeks,15 hours/week,135,01-09-2022,18-10-2022,135,01-09-2022,18-10-2022,,high school algebra
+How to Code - Simple Data,Core Programming,7 weeks,8-10 hours/week,56,18-10-2022,06-11-2022,70,18-10-2022,11-11-2022,,-
+How to Code - Complex Data,Core Programming,6 weeks,8-10 hours/week,48,06-11-2022,23-11-2022,60,11-11-2022,02-12-2022,,How to Code: Simple Data
+"Programming Languages, Part A",Core Programming,5 weeks,4-8 hours/week,20,23-11-2022,30-11-2022,40,02-12-2022,16-12-2022,,How to Code (Hear instructor)
+"Programming Languages, Part B",Core Programming,3 weeks,4-8 hours/week,12,30-11-2022,04-12-2022,24,16-12-2022,25-12-2022,,"Programming Languages, Part A"
+"Programming Languages, Part C",Core Programming,3 weeks,4-8 hours/week,12,04-12-2022,09-12-2022,24,25-12-2022,02-01-2023,,"Programming Languages, Part B"
+Object-Oriented Design,Core Programming,4 weeks,4 hours/week,16,09-12-2022,14-12-2022,16,02-01-2023,08-01-2023,,Basic Java
+Design Patterns,Core Programming,4 weeks,4 hours/week,16,14-12-2022,20-12-2022,16,08-01-2023,13-01-2023,,Object-Oriented Design
+Software Architecture,Core Programming,4 weeks,2-5 hours/week,8,20-12-2022,23-12-2022,20,13-01-2023,20-01-2023,,Design Patterns
+Calculus 1A: Differentiation,Core Math,13 weeks,6-10 hours/week,78,23-12-2022,19-01-2023,130,20-01-2023,07-03-2023,,high school math
+Calculus 1B: Integration,Core Math,13 weeks,5-10 hours/week,65,19-01-2023,11-02-2023,130,07-03-2023,21-04-2023,,Calculus 1A
+Calculus 1C: Coordinate Systems & Infinite Series,Core Math,6 weeks,5-10 hours/week,30,11-02-2023,21-02-2023,60,21-04-2023,12-05-2023,,Calculus 1B
+Mathematics for Computer Science,Core Math,13 weeks,5 hours/week,65,21-02-2023,16-03-2023,65,12-05-2023,04-06-2023,,Calculus 1C
+The Missing Semester of Your CS Education,CS Tools,2 weeks,12 hours/week,24,16-03-2023,24-03-2023,24,04-06-2023,12-06-2023,,-
+Build a Modern Computer from First Principles: From Nand to Tetris,Core Systems,6 weeks,7-13 hours/week,42,24-03-2023,08-04-2023,78,12-06-2023,10-07-2023,,C-like programming language
+Build a Modern Computer from First Principles: Nand to Tetris Part II,Core Systems,6 weeks,12-18 hours/week,72,08-04-2023,03-05-2023,108,10-07-2023,17-08-2023,,one of these programming languages; From Nand to Tetris Part I
+Operating Systems: Three Easy Pieces,Core Systems,10-12 weeks,6 hours/week,60,03-05-2023,24-05-2023,72,17-08-2023,11-09-2023,,"algorithms, familiarity with C is useful"
+Computer Networking: a Top-Down Approach,Core Systems,8 weeks,4-12 hours/week,32,24-05-2023,04-06-2023,96,11-09-2023,14-10-2023,,algebra; probability; basic CS
+"Divide and Conquer, Sorting and Searching, and Randomized Algorithms",Core Theory,4 weeks,4-8 hours/week,16,04-06-2023,10-06-2023,32,14-10-2023,26-10-2023,,any programming language; Mathematics for Computer Science
+"Graph Search, Shortest Paths, and Data Structures",Core Theory,4 weeks,4-8 hours/week,16,10-06-2023,16-06-2023,32,26-10-2023,06-11-2023,,"Divide and Conquer, Sorting and Searching, and Randomized Algorithms"
+"Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming",Core Theory,4 weeks,4-8 hours/week,16,16-06-2023,21-06-2023,32,06-11-2023,17-11-2023,,"Graph Search, Shortest Paths, and Data Structures"
+"Shortest Paths Revisited, NP-Complete Problems and What To Do About Them",Core Theory,4 weeks,4-8 hours/week,16,21-06-2023,27-06-2023,32,17-11-2023,28-11-2023,,"Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming"
+Cybersecurity Fundamentals,Core Security,8 weeks,10-12 hours/week,80,27-06-2023,25-07-2023,96,28-11-2023,01-01-2024,,-
+Principles of Secure Coding,Core Security,4 weeks,4 hours/week,16,25-07-2023,30-07-2023,16,01-01-2024,06-01-2024,,-
+Identifying Security Vulnerabilities,Core Security,4 weeks,4 hours/week,16,30-07-2023,05-08-2023,16,06-01-2024,12-01-2024,,-
+Identifying Security Vulnerabilities in C/C++ Programming or Exploiting and Securing Vulnerabilities in Java Applications,Core Security,4 weeks,5 hours/week,20,05-08-2023,12-08-2023,20,12-01-2024,19-01-2024,,-
+Databases: Modeling and Theory,Core Applications,2 weeks,10 hours/week,20,19-08-2023,26-08-2023,20,26-01-2024,02-02-2024,,core programming
+Databases: Relational Databases and SQL,Core Applications,2 weeks,10 hours/week,20,12-08-2023,19-08-2023,20,19-01-2024,26-01-2024,,core programming
+Databases: Semistructured Data,Core Applications,2 weeks,10 hours/week,20,26-08-2023,02-09-2023,20,02-02-2024,09-02-2024,,core programming
+Machine Learning,Core Applications,11 weeks,4-6 hours/week,44,02-09-2023,17-09-2023,66,09-02-2024,03-03-2024,,linear algebra
+Computer Graphics,Core Applications,6 weeks,12 hours/week,72,17-09-2023,13-10-2023,72,03-03-2024,28-03-2024,,C++; Java; linear algebra
+Software Engineering: Introduction,Core Applications,6 weeks,8-10 hours/week,48,13-10-2023,29-10-2023,60,28-03-2024,18-04-2024,,Core Programming; a sizable project
+"Ethics, Technology and Engineering",Core Ethics,9 weeks,2 hours/week,18,29-10-2023,05-11-2023,18,18-04-2024,25-04-2024,,-
+Intellectual Property Law in Digital Age,Core Ethics,4 weeks,2 hours/week,8,05-11-2023,07-11-2023,8,25-04-2024,27-04-2024,,-
+Data Privacy Fundamentals,Core Ethics,3 weeks,3 hours/week,9,07-11-2023,11-11-2023,9,27-04-2024,30-04-2024,,-
+Parallel Programming,Advanced Programming,4 weeks,6-8 hours/week,24,11-11-2023,19-11-2023,32,30-04-2024,12-05-2024,,Scala programming
+Compilers,Advanced Programming,9 weeks,6-8 hours/week,54,19-11-2023,08-12-2023,72,12-05-2024,06-06-2024,,none
+Introduction to Haskell,Advanced Programming,14 weeks,-,100,08-12-2023,12-01-2024,100,06-06-2024,11-07-2024,,-
+Learn Prolog Now!,Advanced Programming,12 weeks,-,100,12-01-2024,16-02-2024,100,11-07-2024,15-08-2024,,-
+Software Debugging,Advanced Programming,8 weeks,6 hours/week,48,16-02-2024,04-03-2024,48,15-08-2024,01-09-2024,,Python; object-oriented programming
+Software Testing,Advanced Programming,4 weeks,6 hours/week,24,04-03-2024,12-03-2024,24,01-09-2024,09-09-2024,,Python; programming experience
+Final Project,Final Project,,,100,12-03-2024,16-04-2024,100,09-09-2024,14-10-2024,,
