@@ -43,10 +43,12 @@
 41,Software Testing,Advanced Programming,4 weeks,6 hours/week,AP006
 42,Final Project,Final Project,,,FP001
 43,C++ For Everybody,Prerequisites,13 weeks,,P001
-44, Java For Everybody,Prerequisites,12 weeks,,P002
+44,Java For Everybody,Prerequisites,12 weeks,,P002
 45,Linear Algebra,Prerequisites,11 weeks,,P003
 46,High School Algebra,Prerequisites,2 weeks,,P004
 47, Probability,Prerequisites,8 weeks,,P005
 48, Basic Cs,Prerequisites,0 weeks,,P006
 49,How To Code (Hear Instructor),Prerequisites,0 weeks,,P007
 50,High School Math,Prerequisites,2 weeks,,P008
+51,Scala Programming,Prerequisites,18 weeks,,P009
+52,C Programming,Prerequisites,11 weeks,,P010
