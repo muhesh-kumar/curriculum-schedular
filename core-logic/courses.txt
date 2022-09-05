@@ -1,0 +1,51 @@
+Python for Everybody IC001
+Introduction to Computer Science and Programming using Python IC002
+How to Code - Simple Data CP001
+How to Code - Complex Data CP002
+Programming Languages, Part A CP003
+Programming Languages, Part B CP004
+Programming Languages, Part C CP005
+Object-Oriented Design CP006
+Design Patterns CP007
+Software Architecture CP008
+Calculus 1A: Differentiation CM001
+Calculus 1B: Integration CM002
+Calculus 1C: Coordinate Systems & Infinite Series CM003
+Mathematics for Computer Science CM004
+The Missing Semester of Your CS Education CT001
+Build a Modern Computer from First Principles: From Nand to Tetris CS001
+Build a Modern Computer from First Principles: Nand to Tetris Part II CS002
+Operating Systems: Three Easy Pieces CS003
+Computer Networking: a Top-Down Approach CS004
+Divide and Conquer, Sorting and Searching, and Randomized Algorithms CT001
+Graph Search, Shortest Paths, and Data Structures CT002
+Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming CT003
+Shortest Paths Revisited, NP-Complete Problems and What To Do About Them CT004
+Cybersecurity Fundamentals CS001
+Principles of Secure Coding CS002
+Identifying Security Vulnerabilities CS003
+Identifying Security Vulnerabilities in C/C++ Programming or Exploiting and Securing Vulnerabilities in Java Applications CS004
+Databases: Modeling and Theory CA001
+Databases: Relational Databases and SQL CA002
+Databases: Semistructured Data CA003
+Machine Learning CA004
+Computer Graphics CA005
+Software Engineering: Introduction CA006
+Ethics, Technology and Engineering CE001
+Intellectual Property Law in Digital Age CE002
+Data Privacy Fundamentals CE003
+Parallel Programming AP001
+Compilers AP002
+Introduction to Haskell AP003
+Learn Prolog Now! AP004
+Software Debugging AP005
+Software Testing AP006
+Final Project FP001
+C++ For Everybody P001
+Java For Everybody P002
+Linear Algebra P003
+High School Algebra P004
+Probability P005
+Basic Cs P006
+How To Code (Hear Instructor) P007
+High School Math P008
