@@ -62,12 +62,12 @@ unordered_map<string, string> course_code_course_name;
 /* ===========Course Graph============= */
 unordered_map<string, vector<string>> adj;
 
-vector<string> get_words(const string &s) {
+vector<string> get_words(const string &s, const char delim = ' ') {
   vector<string> words;
   
   string word;
   for (auto &ch: s) {
-    if (ch == ' ') {
+    if (ch == delim) {
       words.push_back(word);
       word = "";
     } else {
@@ -84,9 +84,10 @@ vector<string> get_words(const string &s) {
  * Read courses which are given in the following format:
  * (Course Name, Course Code)
 */
-void read_courses() {
-  string line;
-  while (getline(cin, line)) {
+void read_courses(int num_courses) {
+  while (num_courses--) {
+    string line;
+    getline(cin, line);
     vector<string> words = get_words(line);
     
     string course_code = words.back();
@@ -101,37 +102,52 @@ void read_courses() {
 }
 
 /*
- * Read the graph which is given in the following format:
+ * Read and build the graph which is given in the following format:
  * (Course Code, [Prerequisite Course Code#1, ....Prerequisite Course Code #2])
 */
-void read_graph() {
-  string line;
-  while (getline(cin, line)) {
-    vector<string> course_codes = get_words(line);
+void build_graph(int num_nodes) {
+  while (num_nodes--) {
+    string line;
+    getline(cin, line);
 
+    vector<string> course_codes = get_words(line, ' ');
     string course_code = course_codes.front();
-    vector<string> prerequisitie_course_codes(1 + course_codes.begin(), course_codes.end());
-
-    adj[course_code] = prerequisitie_course_codes;
+    
+    if (course_codes.size() > 1) {
+      vector<string> prerequisitie_course_codes = get_words(course_codes[1], ';');
+      adj[course_code] = prerequisitie_course_codes;
+    } else {
+      adj[course_code] = {};
+    }
   }
 }
 
+/*
+ * Topologically sort the graph and identify the electives (i.e., nodes with 0 outdegree)
+*/
 
 int32_t main() {
-  freopen("courses.txt", "r", stdin); 
+  freopen("input.txt", "r", stdin); 
 
   Course * c = new Course();
   cout << "testing main" << "\n";
   Curriculum cc;
-
   
   /* Build the course_code - course_name map */
-  read_courses();
+  read_courses(51);
   for (auto &course: course_code_course_name) {
     cout << course.first << " " << course.second << "\n";
   }
   
   /* Build the graph */
+  build_graph(53);
+  for (auto &node: adj) {
+    cout << node.first << " : ";
+    for (auto &child: node.second) {
+      cout << child << " ";
+    }
+    cout << "\n";
+  }
 
   return 0;
 }
