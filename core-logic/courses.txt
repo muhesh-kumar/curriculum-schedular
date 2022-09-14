@@ -12,11 +12,11 @@ Calculus 1A: Differentiation CM001
 Calculus 1B: Integration CM002
 Calculus 1C: Coordinate Systems & Infinite Series CM003
 Mathematics for Computer Science CM004
-The Missing Semester of Your CS Education CT001
-Build a Modern Computer from First Principles: From Nand to Tetris CS001
-Build a Modern Computer from First Principles: Nand to Tetris Part II CS002
-Operating Systems: Three Easy Pieces CS003
-Computer Networking: a Top-Down Approach CS004
+The Missing Semester of Your CS Education CST001
+Build a Modern Computer from First Principles: From Nand to Tetris CRS001
+Build a Modern Computer from First Principles: Nand to Tetris Part II CRS002
+Operating Systems: Three Easy Pieces CRS003
+Computer Networking: a Top-Down Approach CRS004
 Divide and Conquer, Sorting and Searching, and Randomized Algorithms CT001
 Graph Search, Shortest Paths, and Data Structures CT002
 Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming CT003
@@ -49,3 +49,5 @@ Probability P005
 Basic Cs P006
 How To Code (Hear Instructor) P007
 High School Math P008
+Scala Programming P009
+C Programming P010
