@@ -1,7 +1,5 @@
 import { FC } from 'react';
-import classNames from 'classnames';
-
-const cn = classNames;
+import { clsx } from 'clsx';
 
 export type BtnProps = {
   btnText: string,
@@ -12,7 +10,7 @@ const Btn: FC<BtnProps> = ({ btnText, isCTOBtn = false }) => {
   return (
     <div>
       <button className={
-        cn("bg-primaryDark px-4 py-2 rounded-md text-white",
+        clsx("bg-primaryDark px-4 py-2 rounded-md text-white",
           (isCTOBtn && 'font-bold'))
       }>
         {btnText}
