@@ -1,7 +1,12 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
+import { clsx } from 'clsx';
+
+import { pages } from '@components/navbar/pages';
 
 const Navbar: FC = () => {
+  const router = useRouter();
   return (
     <div className="flex justify-between sticky top-0 py-5">
       <div>
@@ -9,11 +14,17 @@ const Navbar: FC = () => {
         <h1 className="text-2xl font-bold">Curriculum Schedular</h1>
       </div>
       <div className="flex gap-14">
-        <Link href="/"><a className="hover:font-semibold">Home</a></Link>
-        <Link href="/">Home</Link>
-        <Link href="/">Home</Link>
-        <Link href="/">Home</Link>
-        <Link href="/">Home</Link>
+        {
+          pages.map((page, index) => {
+            return (
+              <Link href={page.href} key={index}>
+                <a className={clsx(
+                  (page.href == router.asPath ? "font-semibold" : "")
+                )}>{page.name}</a>
+              </Link>
+            );
+          })
+        }
       </div>
     </div>
   )

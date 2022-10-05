@@ -8,7 +8,7 @@ export const pages = [
     href: '/accounts/signup',
   },
   {
-    name: 'login',
+    name: 'Login',
     href: '/accounts/login',
   },
 ];

@@ -4,7 +4,9 @@ import LandingPage from './LandingPage'
 
 const Home: NextPage = () => {
   return (
-    <LandingPage />
+    <>
+      <LandingPage />
+    </>
   )
 }
 
