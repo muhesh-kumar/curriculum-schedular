@@ -11,7 +11,9 @@ const Navbar: FC = () => {
     <div className="flex justify-between sticky top-0 py-5">
       <div>
         {/*TODO: add logo here */}
-        <h1 className="text-2xl font-bold">Curriculum Schedular</h1>
+        <Link href="/">
+          <a className="text-2xl font-bold">Curriculum Schedular</a>
+        </Link>
       </div>
       <div className="flex gap-14">
         {
