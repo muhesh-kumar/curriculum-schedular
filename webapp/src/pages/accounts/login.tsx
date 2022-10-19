@@ -12,9 +12,6 @@ import styles from '@styles/Form.module.css';
 
 const LoginPage: NextPage = () => {
   const [show, setShow] = useState(false);
-
-  const { data: session } = useSession();
-
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -23,43 +20,18 @@ const LoginPage: NextPage = () => {
     onSubmit,
   });
 
-
   // FIXME: give a proper type for values
   async function onSubmit(values: any) {
     console.log(values);
   }
 
-  // Google Handler function
   async function handleGoogleSignin() {
-    signIn('google', { callbackUrl: "http://localhost:3000/" })
+    signIn('google', { callbackUrl: "http://localhost:3000/account" })
   }
 
-  // Github Login 
   async function handleGithubSignin() {
-    signIn('github', { callbackUrl: "http://localhost:3000" })
+    signIn('github', { callbackUrl: "http://localhost:3000/account" })
   }
-
-  // console.log(session);
-  // if (session) {
-  //   return (
-  //     <div>
-  //       <p>
-  //         Welcome, {session.user.email}
-  //       </p>
-  //       <Image src={session.user.image} alt="" style={{ borderRadius: '100%' }} height={100} width={100} />
-  //       <button onClick={() => signOut()}>Sign Out</button>
-  //     </div>
-  //   )
-  // } else {
-  //   return (
-  //     <div>
-  //       <p>
-  //         You are not signed in.
-  //       </p>
-  //       <button onClick={() => signIn()}>Sign in</button>
-  //     </div>
-  //   )
-  // }
 
   return (
     <AuthPageLayout>
