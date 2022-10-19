@@ -23,7 +23,9 @@ const LoginPage: NextPage = () => {
     onSubmit,
   });
 
-  async function onSubmit(values) {
+
+  // FIXME: give a proper type for values
+  async function onSubmit(values: any) {
     console.log(values);
   }
 
@@ -75,7 +77,6 @@ const LoginPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type="email"
-                name='email'
                 placeholder='Email'
                 className={styles.input_text}
                 {...formik.getFieldProps('email')}
@@ -87,7 +88,6 @@ const LoginPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type={`${show ? "text" : "password"}`}
-                name='password'
                 placeholder='Password'
                 className={styles.input_text}
                 {...formik.getFieldProps('password')}

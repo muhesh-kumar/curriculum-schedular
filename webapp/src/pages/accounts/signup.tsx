@@ -11,7 +11,7 @@ import AuthPageLayout from '@layouts/AuthPageLayout';
 import styles from '@styles/Form.module.css';
 
 const SignupPage: NextPage = () => {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState({ password: false, cpassword: false })
   const formik = useFormik({
     initialValues: {
       username: "",
@@ -22,7 +22,8 @@ const SignupPage: NextPage = () => {
     onSubmit,
   });
 
-  async function onSubmit(values) {
+  // FIXME: give a proper type for values
+  async function onSubmit(values: any) {
     console.log(values);
   }
 
@@ -44,7 +45,6 @@ const SignupPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type="text"
-                name='Username'
                 placeholder='Username'
                 className={styles.input_text}
                 {...formik.getFieldProps('username')}
@@ -56,7 +56,6 @@ const SignupPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type="email"
-                name='email'
                 placeholder='Email'
                 className={styles.input_text}
                 {...formik.getFieldProps('email')}
@@ -68,7 +67,6 @@ const SignupPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type={`${show.password ? "text" : "password"}`}
-                name='password'
                 placeholder='password'
                 className={styles.input_text}
                 {...formik.getFieldProps('password')}
@@ -81,7 +79,6 @@ const SignupPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type={`${show.cpassword ? "text" : "password"}`}
-                name='cpassword'
                 placeholder='Confirm Password'
                 className={styles.input_text}
                 {...formik.getFieldProps('cpassword')}
@@ -110,4 +107,3 @@ const SignupPage: NextPage = () => {
 }
 
 export default SignupPage;
-
