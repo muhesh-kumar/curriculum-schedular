@@ -3,16 +3,14 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import PageLayout from '@layouts/PageLayout';
-import Navbar from '@components/navbar';
 import Btn from '@elements/btn';
 import ObjectivesSection from '@components/objectives';
 
 const LandingPage: NextPage = () => {
   return (
     <PageLayout>
-      <Navbar />
       {/* TODO: extract this out into a separate component */}
-      <main className="flex justify-between h-screen w-[85%] items-center">
+      <main className="flex justify-between h-screen px-20 w-[85%] items-center">
         <aside className="flex flex-col w-1/4 gap-3">
           <div>
             <h1 className="text-4xl font-bold">Get Started</h1>
@@ -33,8 +31,8 @@ const LandingPage: NextPage = () => {
           />
         </div>
       </main>
-
       <ObjectivesSection />
+      {/* <Footer /> */}
     </PageLayout>
   )
 }

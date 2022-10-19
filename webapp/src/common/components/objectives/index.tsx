@@ -4,8 +4,8 @@ import { objectives } from './objectives';
 const ObjectivesSection = () => {
   return (
     <div className="flex flex-col gap-3 items-center">
-      <h1 className="text-3xl font-bold">Objectives</h1>
-      <h2 className="text-xl font-semibold">What we try to achieve using our product</h2>
+      <h1 className="text-4xl font-bold">Objectives</h1>
+      <h2 className="text-2xl font-semibold">What we try to achieve using our product</h2>
       <div className='flex gap-20 justify-center'>
         <div>
           <ul>
