@@ -25,7 +25,6 @@ const LandingPage: NextPage = () => {
           <Image
             src="/images/student-studying-transparent.svg"
             alt="Picture of a student studying"
-            className='z-[-10]'
             width={650}
             height={650}
           />

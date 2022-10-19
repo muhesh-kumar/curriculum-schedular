@@ -8,7 +8,7 @@ import { pages } from '@components/navbar/pages';
 const Navbar: FC = () => {
   const router = useRouter();
   return (
-    <div className="flex justify-between sticky top-0 px-20 py-5 backdrop-blur">
+    <div className="flex justify-between sticky top-0 px-20 py-5 backdrop-blur -z-[-1]">
       <div>
         {/*TODO: add logo here */}
         <Link href="/">
