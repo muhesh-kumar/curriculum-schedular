@@ -61,61 +61,66 @@ const LoginPage: NextPage = () => {
 
   return (
     <AuthPageLayout>
-      <section className='w-1/4 mx-auto flex flex-col gap-10 justify-center'>
-        <div className="title">
-          <h1 className='text-gray-800 text-4xl font-bold py-4'>Explore</h1>
-          <p className='w-3/4 mx-auto text-gray-400'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, officia?</p>
-        </div>
-        {/* form */}
-        <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
-          <div className={styles.input_group}>
-            <input
-              type="email"
-              name='email'
-              placeholder='Email'
-              className={styles.input_text}
-              {...formik.getFieldProps('email')}
-            />
-            <span className='icon flex items-center px-4'>
-              <HiAtSymbol size={25} />
-            </span>
+      <div className="flex px-20 items-center">
+        <section>
+          <Image src="/images/girl-student-studying.svg" width={650} height={650} alt=""></Image>
+        </section>
+        <section className='w-1/4 mx-auto flex flex-col gap-10'>
+          <div className="title flex flex-col items-center">
+            <h1 className='text-4xl font-bold py-4'>Get Started!</h1>
+            <p>Start your learning journey by creating an account here!</p>
           </div>
-          <div className={styles.input_group}>
-            <input
-              type={`${show ? "text" : "password"}`}
-              name='password'
-              placeholder='password'
-              className={styles.input_text}
-              {...formik.getFieldProps('password')}
-            />
-            <span className='icon flex items-center px-4' onClick={() => setShow(!show)}>
-              <HiFingerPrint size={25} />
-            </span>
-          </div>
+          {/* form */}
+          <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
+            <div className={styles.input_group}>
+              <input
+                type="email"
+                name='email'
+                placeholder='Email'
+                className={styles.input_text}
+                {...formik.getFieldProps('email')}
+              />
+              <span className='icon flex items-center px-4'>
+                <HiAtSymbol size={25} />
+              </span>
+            </div>
+            <div className={styles.input_group}>
+              <input
+                type={`${show ? "text" : "password"}`}
+                name='password'
+                placeholder='password'
+                className={styles.input_text}
+                {...formik.getFieldProps('password')}
+              />
+              <span className='icon flex items-center px-4' onClick={() => setShow(!show)}>
+                <HiFingerPrint size={25} />
+              </span>
+            </div>
 
-          {/* login buttons */}
-          <div className="input-button">
-            <button type='submit' className={styles.button}>
-              Login
-            </button>
-          </div>
-          <div className="input-button">
-            <button type='button' onClick={handleGoogleSignin} className={styles.button_custom}>
-              Sign In with Google <Image src={'/images/google.svg'} width="20" height={20} alt="" ></Image>
-            </button>
-          </div>
-          <div className="input-button">
-            <button type='button' onClick={handleGithubSignin} className={styles.button_custom}>
-              Sign In with Github <Image src={'/images/github.svg'} width={25} height={25} alt=""></Image>
-            </button>
-          </div>
-        </form>
+            {/* login buttons */}
+            <div className="input-button">
+              <button type='submit' className={styles.button}>
+                Login
+              </button>
+            </div>
+            <div>
+              <button type='button' onClick={handleGoogleSignin} className={styles.button_custom}>
+                Sign In with Google <Image src={'/images/google.svg'} width="20" height={20} alt="" ></Image>
+              </button>
+            </div>
+            <div className="input-button">
+              <button type='button' onClick={handleGithubSignin} className={styles.button_custom}>
+                Sign In with Github <Image src={'/images/github.svg'} width={25} height={25} alt=""></Image>
+              </button>
+            </div>
+          </form>
 
-        {/* bottom */}
-        <p className='text-center text-gray-400 '>
-          don&lsquo;t have an account yet? <Link href={'/accounts/signup'}><a className='text-blue-700'>Sign Up</a></Link>
-        </p>
-      </section>
+          {/* bottom */}
+          <p className='text-center text-gray-400 '>
+            don&lsquo;t have an account yet? <Link href={'/accounts/signup'}><a className='text-blue-700'>Sign Up</a></Link>
+          </p>
+        </section>
+      </div>
     </AuthPageLayout>)
 }
 
