@@ -18,7 +18,9 @@ const LandingPage: NextPage = () => {
           </div>
           <p className="text-md">An automated Curriculum Schedular which prepares a schedule as per your needs. A great tool for any self-learning student!</p>
           <Link href="/accounts/signup">
-            <Btn btnText="Create an account" isCTOBtn={true} />
+            <a>
+              <Btn btnText="Create an account" isCTOBtn={true} />
+            </a>
           </Link>
         </aside>
         <div className="">

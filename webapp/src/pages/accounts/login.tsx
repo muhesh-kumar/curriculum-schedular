@@ -100,7 +100,7 @@ const LoginPage: NextPage = () => {
             {/* login buttons */}
             <div className="input-button">
               <button type='submit' className={styles.button}>
-                Login
+                Log In
               </button>
             </div>
             <div>
