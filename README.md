@@ -1,6 +1,8 @@
-## Project README
+# Curriculum Schedular
 
-For graph implementation on the Front End:
+## References
+
+### For graph implementation on the Client Side:
 
 https://reactflow.dev/
 
@@ -13,3 +15,8 @@ https://dev.to/vaibhavkhulbe/make-interactive-node-based-graphs-with-react-flow-
 ### Google Auth Tutorial
 
 https://www.youtube.com/watch?v=A5ZN--P9vXM
+
+### Next Authentication Boilerplate
+
+https://www.youtube.com/watch?v=CL-rlA5g9Zg
+https://github.com/akashyap2013/Authentication_App_with_Google_and_Github
