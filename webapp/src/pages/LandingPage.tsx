@@ -2,13 +2,13 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import PageLayout from '@layouts/PageLayout';
+import HomePageLayout from '@layouts/HomePageLayout';
 import Btn from '@elements/btn';
 import ObjectivesSection from '@components/objectives';
 
 const LandingPage: NextPage = () => {
   return (
-    <PageLayout>
+    <HomePageLayout>
       {/* TODO: extract this out into a separate component */}
       <main className="flex justify-between h-screen px-20 w-[85%] items-center">
         <aside className="flex flex-col w-1/4 gap-3">
@@ -31,7 +31,7 @@ const LandingPage: NextPage = () => {
         </div>
       </main>
       <ObjectivesSection />
-    </PageLayout>
+    </HomePageLayout>
   )
 }
 

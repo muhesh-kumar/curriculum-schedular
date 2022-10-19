@@ -1,6 +1,6 @@
 import { useSession, signOut } from 'next-auth/react'
 
-const account = () => {
+const Account = () => {
   const { data: session, status } = useSession({
     required: true
   });
@@ -21,4 +21,4 @@ const account = () => {
   }
 }
 
-export default account
+export default Account
