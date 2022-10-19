@@ -67,8 +67,8 @@ const LoginPage: NextPage = () => {
         </section>
         <section className='w-1/4 mx-auto flex flex-col gap-10'>
           <div className="title flex flex-col items-center">
-            <h1 className='text-4xl font-bold py-4'>Get Started!</h1>
-            <p>Start your learning journey by creating an account here!</p>
+            <h1 className='text-4xl font-bold py-4'>Resume work!</h1>
+            <p>Resume your journey by logging in!</p>
           </div>
           {/* form */}
           <form className='flex flex-col gap-5' onSubmit={formik.handleSubmit}>
@@ -88,7 +88,7 @@ const LoginPage: NextPage = () => {
               <input
                 type={`${show ? "text" : "password"}`}
                 name='password'
-                placeholder='password'
+                placeholder='Password'
                 className={styles.input_text}
                 {...formik.getFieldProps('password')}
               />
@@ -116,8 +116,8 @@ const LoginPage: NextPage = () => {
           </form>
 
           {/* bottom */}
-          <p className='text-center text-gray-400 '>
-            don&lsquo;t have an account yet? <Link href={'/accounts/signup'}><a className='text-blue-700'>Sign Up</a></Link>
+          <p className='text-center'>
+            don&lsquo;t have an account yet? <Link href={'/accounts/signup'}><a className='text-primaryDark'>Sign Up</a></Link>
           </p>
         </section>
       </div>
