@@ -32,7 +32,6 @@ const LandingPage: NextPage = () => {
         </div>
       </main>
       <ObjectivesSection />
-      {/* <Footer /> */}
     </PageLayout>
   )
 }
