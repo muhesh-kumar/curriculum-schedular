@@ -9,3 +9,7 @@ https://reactjsexample.com/a-react-library-for-building-node-based-graphs/
 https://webkid.io/blog/react-flow-node-based-graph-library/
 
 https://dev.to/vaibhavkhulbe/make-interactive-node-based-graphs-with-react-flow-102d
+
+### Google Auth Tutorial
+
+https://www.youtube.com/watch?v=A5ZN--P9vXM
