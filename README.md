@@ -19,4 +19,5 @@ https://www.youtube.com/watch?v=A5ZN--P9vXM
 ### Next Authentication Boilerplate
 
 https://www.youtube.com/watch?v=CL-rlA5g9Zg
+
 https://github.com/akashyap2013/Authentication_App_with_Google_and_Github

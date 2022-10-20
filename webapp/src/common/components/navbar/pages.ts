@@ -4,11 +4,7 @@ export const pages = [
     href: '/',
   },
   {
-    name: 'Signup',
+    name: 'Sign Up',
     href: '/accounts/signup',
-  },
-  {
-    name: 'Login',
-    href: '/accounts/login',
   },
 ];

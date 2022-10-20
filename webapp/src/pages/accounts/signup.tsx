@@ -67,7 +67,7 @@ const SignupPage: NextPage = () => {
             <div className={styles.input_group}>
               <input
                 type={`${show.password ? "text" : "password"}`}
-                placeholder='password'
+                placeholder='Password'
                 className={styles.input_text}
                 {...formik.getFieldProps('password')}
               />
