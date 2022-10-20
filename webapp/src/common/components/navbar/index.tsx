@@ -19,13 +19,13 @@ const Navbar: FC = () => {
           <a className="text-2xl font-bold">Curriculum Schedular</a>
         </Link>
       </div>
-      <div className="flex gap-14 items-center">
+      <div className="flex gap-5 items-center">
         {
           pages.map((page, index) => {
             return (
               <Link href={page.href} key={index}>
                 <a className={clsx(
-                  (page.href == router.asPath ? "font-semibold" : ""), "text-sm"
+                  (page.href === router.asPath ? "font-semibold" : ""), "text-sm"
                 )}>{page.name}</a>
               </Link>
             );

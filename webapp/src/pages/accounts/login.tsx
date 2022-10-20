@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import { HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 import { useState } from 'react';
 
-import AuthPageLayout from '@layouts/AuthPageLayout';
+import GeneralPageLayout from '@layouts/GeneralPageLayout';
 import styles from '@styles/Form.module.css';
 
 const LoginPage: NextPage = () => {
@@ -34,7 +34,7 @@ const LoginPage: NextPage = () => {
   }
 
   return (
-    <AuthPageLayout>
+    <GeneralPageLayout>
       <div className="flex px-20 items-center">
         <section>
           <Image src="/images/girl-student-studying.svg" width={650} height={650} alt=""></Image>
@@ -93,7 +93,7 @@ const LoginPage: NextPage = () => {
           </p>
         </section>
       </div>
-    </AuthPageLayout>)
+    </GeneralPageLayout>)
 }
 
 export default LoginPage;

@@ -2,11 +2,11 @@ import { FC, ReactNode } from 'react';
 
 import Navbar from '../components/navbar';
 
-export type AuthPageLayoutProps = {
+export type GeneralPageLayoutProps = {
   children: ReactNode,
 };
 
-const AuthPageLayout: FC<AuthPageLayoutProps> = ({ children }) => {
+const GeneralPageLayout: FC<GeneralPageLayoutProps> = ({ children }) => {
   return (
     <div className="h-screen overflow-x-hidden relative font-poppins bg-background">
       <Navbar />
@@ -15,4 +15,4 @@ const AuthPageLayout: FC<AuthPageLayoutProps> = ({ children }) => {
   )
 }
 
-export default AuthPageLayout
+export default GeneralPageLayout

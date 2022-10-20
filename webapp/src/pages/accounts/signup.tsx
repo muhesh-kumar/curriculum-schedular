@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { useFormik } from 'formik';
 import { HiOutlineUser, HiAtSymbol, HiFingerPrint } from "react-icons/hi";
 
-import AuthPageLayout from '@layouts/AuthPageLayout';
+import GeneralPageLayout from '@layouts/GeneralPageLayout';
 import styles from '@styles/Form.module.css';
 
 const SignupPage: NextPage = () => {
@@ -28,7 +28,7 @@ const SignupPage: NextPage = () => {
   }
 
   return (
-    <AuthPageLayout>
+    <GeneralPageLayout>
       <div className="flex px-20 items-center">
         <section>
           <Image src="/images/girl-student-studying.svg" width={650} height={650} alt=""></Image>
@@ -102,7 +102,7 @@ const SignupPage: NextPage = () => {
           </p>
         </section>
       </div>
-    </AuthPageLayout>
+    </GeneralPageLayout>
   )
 }
 

@@ -1,7 +1,7 @@
 import { FormEvent } from "react";
 import { useSession, getSession } from "next-auth/react"
 
-import AuthPageLayout from "@layouts/AuthPageLayout";
+import GeneralPageLayout from "@layouts/GeneralPageLayout";
 import FileUpload from "@components/file-upload"
 
 const UploadCurriculumPage = () => {
@@ -21,11 +21,11 @@ const UploadCurriculumPage = () => {
   }
 
   return (
-    <AuthPageLayout>
+    <GeneralPageLayout>
       <form onSubmit={handleSubmit} className="h-screen flex justify-center">
         <FileUpload />
       </form>
-    </AuthPageLayout>
+    </GeneralPageLayout>
   )
 }
 

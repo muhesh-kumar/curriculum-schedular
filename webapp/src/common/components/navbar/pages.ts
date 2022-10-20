@@ -9,6 +9,10 @@ export const pages = [
   },
   {
     name: 'Upload Curriculum',
-    href: 'upload-curriculum',
+    href: '/upload-curriculum',
+  },
+  {
+    name: 'Progress Tracker',
+    href: '/progress-tracker',
   },
 ];
