@@ -17,7 +17,6 @@ const FileUpload = () => {
         <div {...getRootProps({ className: 'dropzone' })}>
           <input {...getInputProps()} />
           <div className="flex flex-col items-center gap-3">
-            {/* TODO: add an excel file image here */}
             <Image src="/icons/excel-icon.svg" height={100} width={100} alt="Excel or CSV File Icon" />
             <h2 className="text-xl">Upload your curriculum which is in a CSV format</h2>
             <p className="text-sm">OR</p>

@@ -25,7 +25,7 @@ const Navbar: FC = () => {
             return (
               <Link href={page.href} key={index}>
                 <a className={clsx(
-                  (page.href == router.asPath ? "font-semibold" : "")
+                  (page.href == router.asPath ? "font-semibold" : ""), "text-sm"
                 )}>{page.name}</a>
               </Link>
             );
@@ -34,10 +34,10 @@ const Navbar: FC = () => {
         {status !== "authenticated" ? (
           <Link href="/accounts/login">
             <a className={clsx(
-              ("/accounts/login" == router.asPath ? "font-semibold" : "")
+              ("/accounts/login" == router.asPath ? "font-semibold" : ""), "text-sm"
             )} >Log In</a></Link>
         ) : (
-          <button className='flex gap-2 items-center' onClick={() => signOut()}>
+          <button className='flex gap-2 items-center text-sm' onClick={() => signOut()}>
             Log Out
             <Image src={session?.user?.image!} alt="User's Profile Picture" className="rounded-full" height={30} width={30} />
           </button>

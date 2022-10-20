@@ -7,4 +7,8 @@ export const pages = [
     name: 'Sign Up',
     href: '/accounts/signup',
   },
+  {
+    name: 'Upload Curriculum',
+    href: 'upload-curriculum',
+  },
 ];
