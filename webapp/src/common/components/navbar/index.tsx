@@ -37,10 +37,16 @@ const Navbar: FC = () => {
               ("/accounts/login" == router.asPath ? "font-semibold" : ""), "text-sm"
             )} >Log In</a></Link>
         ) : (
-          <button className='flex gap-2 items-center text-sm' onClick={() => signOut()}>
-            Log Out
-            <Image src={session?.user?.image!} alt="User's Profile Picture" className="rounded-full" height={30} width={30} />
-          </button>
+
+          <div className="flex gap-2 items-center">
+            <button className='text-sm' onClick={() => signOut()}>
+              Log Out
+            </button>
+            <Link href="/profile">
+              <Image src={session?.user?.image!} alt="User's Profile Picture" className="rounded-full cursor-pointer" height={30} width={30}>
+              </Image>
+            </Link>
+          </div>
         )}
       </div>
     </div>
