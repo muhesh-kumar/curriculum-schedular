@@ -7,5 +7,6 @@ heatmap.csv
 similarity.csv
 
 # Front End Related
+webapp/.env
 
 # Back End Related
