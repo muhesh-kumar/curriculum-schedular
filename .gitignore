@@ -1,12 +1,5 @@
-# Machine Learning related
-
 /.ipynb_checkpoints
 notebooks/.ipynb_checkpoints
 h.py
 heatmap.csv
 similarity.csv
-
-# Front End Related
-webapp/.env
-
-# Back End Related
