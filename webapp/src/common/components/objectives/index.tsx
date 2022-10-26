@@ -3,7 +3,7 @@ import { objectives } from './objectives';
 
 const ObjectivesSection = () => {
   return (
-    <div className="flex flex-col py-10 gap-3 items-center  bg-gradient-to-b from-primaryLight mix-blend-normal">
+    <div className="flex flex-col py-10 gap-3 items-center bg-gradient-to-b from-primaryLight to-white mix-blend-normal">
       <h1 className="text-4xl font-bold">Objectives</h1>
       <h2 className="text-2xl font-semibold">What we try to achieve using our product</h2>
       <div className='flex gap-20 justify-center'>

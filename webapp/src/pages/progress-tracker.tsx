@@ -1,25 +1,28 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import ReactFlow, {
   MiniMap,
   Controls,
   Background,
   useNodesState,
-  useEdgesState,
-  addEdge,
-  MarkerType,
+  // useEdgesState,
+  // addEdge,
 } from 'reactflow';
-
 
 import GeneralPageLayout from '@layouts/GeneralPageLayout'
 import withNoSSR from '@hoc/withNoSSR';
+
+import BtnNode from '@lib/BtnNode';
+
+import { useGraphStore } from '@utils/store';
+import Edge from '@utils/Edge';
 
 // 👇 you need to import the reactflow styles
 import 'reactflow/dist/style.css';
 
 const initialNodes = [
   {
-    id: '1', position: { x: 100, y: 1 }, data: { label: 'Calculus' },
-    sourcePosition: 'right', type: 'input',
+    id: '1', position: { x: 100, y: 1 }, data: { label: 'Calculus', id: 1 },
+    sourcePosition: 'right', type: 'btn'
   },
   {
     id: '4', position: { x: 100, y: 50 }, data: { label: 'High School Algebra' },
@@ -47,64 +50,36 @@ const initialNodes = [
   },
 ];
 
-const initialEdges = [{
-  id: 'e1-2', source: '1', target: '2', markerEnd: {
-    type: MarkerType.Arrow, // for directed edges
-  },
-  animated: true, // for dotted lines as edges
-},
-{
-  id: 'e1-3', source: '1', target: '3', markerEnd: {
-    type: MarkerType.Arrow,
-  },
-  animated: true, // for dotted lines as edges
-},
-{
-  id: 'e4-3', source: '4', target: '3', markerEnd: {
-    type: MarkerType.Arrow,
-  }, animated: true, // for dotted lines as edges
-},
-{
-  id: 'e2-7', source: '2', target: '7', markerEnd: {
-    type: MarkerType.Arrow,
-  },
-  animated: true, // for dotted lines as edges
-},
-{
-  id: 'e3-7', source: '3', target: '7', markerEnd: {
-    type: MarkerType.Arrow,
-  },
-  animated: true, // for dotted lines as edges
-},
-{
-  id: 'e4-7', source: '5', target: '7', markerEnd: {
-    type: MarkerType.Arrow,
-  },
-  animated: true, // for dotted lines as edges
-},
-{
-  id: 'e5-7', source: '6', target: '7', markerEnd: {
-    type: MarkerType.Arrow,
-  },
-  animated: true, // for dotted lines as edges
-},
-];
+
+const nodeTypes = { btn: BtnNode };
 
 const ProgressTracker = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const clickedNodes = useGraphStore((state) => state.clickedNodes);
+  const initialEdges = [
+    new Edge('1', '2', !('1' in clickedNodes && clickedNodes['1'])),
+    new Edge('1', '3'),
+    new Edge('4', '3'),
+    new Edge('2', '7'),
+    new Edge('3', '7'),
+    new Edge('5', '7'),
+    new Edge('6', '7'),
+  ];
 
-  const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  // const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
     <GeneralPageLayout>
       <div className="h-[80%] flex flex-col justify-center items-center">
         <ReactFlow
           nodes={nodes}
-          edges={edges}
+          edges={initialEdges}
           onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
+          // onEdgesChange={onEdgesChange}
+          // onConnect={onConnect}
+          nodeTypes={nodeTypes}
           fitView
         >
           <MiniMap />

@@ -10,7 +10,7 @@ import { footerLinks } from './footerLinks';
 const Footer = () => {
   const router = useRouter();
   return (
-    <footer className="flex flex-col gap-5 bottom-0 py-10 pt-20 px-20 backdrop-blur">
+    <footer className="flex flex-col gap-5 bottom-0 py-10 pt-20 px-20 backdrop-blur bg-white">
       <div className="w-full flex justify-between border-b-[1px] border-b-gray-500 pb-8">
         <div className='flex items-center'>
           {/* <Image src="/icons/list-bullet.svg" height={100} width={100} alt="Product Logo" /> */}
