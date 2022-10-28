@@ -3,6 +3,8 @@
 //   sourcePosition: Position.Right, type: 'btn'
 // },
 
+import { Position } from 'reactflow';
+
 type PositionType = {
   x: number;
   y: number;
@@ -17,15 +19,15 @@ export default class Node {
   id: string;
   position: PositionType;
   data: DataType;
-  sourcePosition: any;
+  sourcePosition: Position;
   type: string;
 
   constructor(
     id: string,
     position: PositionType,
     data: DataType,
-    sourcePosition: any,
-    type: string
+    sourcePosition: Position,
+    type: string,
   ) {
     this.id = id;
     this.position = position;

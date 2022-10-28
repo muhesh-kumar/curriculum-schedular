@@ -1,10 +1,10 @@
-import { NextPage } from 'next'
-import Link from 'next/link'
-import Image from 'next/image'
+import { NextPage } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
 
 import HomePageLayout from '@layouts/HomePageLayout';
-import Btn from '@elements/btn';
 import ObjectivesSection from '@components/objectives';
+import Btn from '@elements/btn';
 
 const LandingPage: NextPage = () => {
   return (
@@ -16,7 +16,10 @@ const LandingPage: NextPage = () => {
             <h1 className="text-4xl font-bold">Get Started</h1>
             <h2 className="text-xl font-semibold">and learn step by step..</h2>
           </div>
-          <p className="text-md">An automated Curriculum Schedular which prepares a schedule as per your needs. A great tool for any self-learning student!</p>
+          <p className="text-md">
+            An automated Curriculum Schedular which prepares a schedule as per
+            your needs. A great tool for any self-learning student!
+          </p>
           <Link href="/accounts/signup">
             <a>
               <Btn btnText="Create an account" isCTOBtn={true} />
@@ -34,7 +37,7 @@ const LandingPage: NextPage = () => {
       </main>
       <ObjectivesSection />
     </HomePageLayout>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;

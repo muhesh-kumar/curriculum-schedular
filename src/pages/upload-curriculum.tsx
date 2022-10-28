@@ -1,24 +1,21 @@
-import { FormEvent } from "react";
-import { useSession, getSession } from "next-auth/react"
+import { FormEvent } from 'react';
+import { useSession } from 'next-auth/react';
 
-import GeneralPageLayout from "@layouts/GeneralPageLayout";
-import FileUpload from "@components/file-upload"
+import GeneralPageLayout from '@layouts/GeneralPageLayout';
+import FileUpload from '@components/file-upload';
 
 const UploadCurriculumPage = () => {
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
-  // TODO: 
+  // TODO:
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
   };
 
-  if (status === "loading") {
-    return <p>Loading...</p>
-  }
+  if (status === 'loading') return <p>Loading...</p>;
 
-  if (status === "unauthenticated") {
-    return <p>Access Denied! Please Sign in to view this page</p>
-  }
+  if (status === 'unauthenticated')
+    return <p>Access Denied! Please Sign in to view this page</p>;
 
   return (
     <GeneralPageLayout>
@@ -26,7 +23,7 @@ const UploadCurriculumPage = () => {
         <FileUpload />
       </form>
     </GeneralPageLayout>
-  )
-}
+  );
+};
 
-export default UploadCurriculumPage
+export default UploadCurriculumPage;

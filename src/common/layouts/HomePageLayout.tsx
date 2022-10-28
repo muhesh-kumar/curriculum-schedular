@@ -1,13 +1,10 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
+import { LayoutProps } from 'types/Layout';
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 
-export type HomePageLayoutProps = {
-  children: ReactNode,
-};
-
-const HomePageLayout: FC<HomePageLayoutProps> = ({ children }) => {
+const HomePageLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="h-screen overflow-x-hidden relative font-poppins">
       <Navbar />
@@ -18,7 +15,7 @@ const HomePageLayout: FC<HomePageLayoutProps> = ({ children }) => {
 
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default HomePageLayout
+export default HomePageLayout;

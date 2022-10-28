@@ -3,8 +3,6 @@ import ReactFlow, {
   Controls,
   Background,
   useNodesState,
-  // useEdgesState,
-  // addEdge,
 } from 'reactflow';
 
 import GeneralPageLayout from '@layouts/GeneralPageLayout';
@@ -19,7 +17,6 @@ import Edge from '@utils/Edge';
 
 import { nodeList } from '../dummy-data/nodeList';
 
-// 👇 you need to import the reactflow styles
 import 'reactflow/dist/style.css';
 
 const nodeTypes = {
@@ -42,9 +39,6 @@ const ProgressTracker = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [nodes, setNodes, onNodesChange] = useNodesState(nodeList);
-  // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
-  // const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
 
   return (
     <GeneralPageLayout>
@@ -53,8 +47,6 @@ const ProgressTracker = () => {
           nodes={nodes}
           edges={initialEdges}
           onNodesChange={onNodesChange}
-          // onEdgesChange={onEdgesChange}
-          // onConnect={onConnect}
           nodeTypes={nodeTypes}
           fitView
         >

@@ -1,8 +1,9 @@
 import create from 'zustand';
-import Edge from '@utils/Edge';
 
 type GraphStore = {
-  clickedNodes: any;
+  clickedNodes: {
+    [key: string]: boolean;
+  };
   addClickedNodes: (clickedNode: string) => void;
 };
 

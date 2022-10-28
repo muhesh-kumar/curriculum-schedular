@@ -12,15 +12,24 @@ const FileUpload = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <h1 className='text-4xl font-bold text-center'>Upload Curriculum</h1>
+      <h1 className="text-4xl font-bold text-center">Upload Curriculum</h1>
       <section className="border-4 border-dashed border-primaryDark rounded-lg flex flex-col px-10 py-10 bg-gradient-to-t from-gray-300 to-primaryLight">
         <div {...getRootProps({ className: 'dropzone' })}>
           <input {...getInputProps()} />
           <div className="flex flex-col items-center gap-3">
-            <Image src="/icons/excel-icon.svg" height={100} width={100} alt="Excel or CSV File Icon" />
-            <h2 className="text-xl">Upload your curriculum which is in a CSV format</h2>
+            <Image
+              src="/icons/excel-icon.svg"
+              height={100}
+              width={100}
+              alt="Excel or CSV File Icon"
+            />
+            <h2 className="text-xl">
+              Upload your curriculum which is in a CSV format
+            </h2>
             <p className="text-sm">OR</p>
-            <button className="bg-primaryDark px-4 py-2 rounded-md text-white">Browse Files</button>
+            <button className="bg-primaryDark px-4 py-2 rounded-md text-white">
+              Browse Files
+            </button>
           </div>
         </div>
       </section>
@@ -30,6 +39,6 @@ const FileUpload = () => {
       </aside>
     </div>
   );
-}
+};
 
-export default FileUpload
+export default FileUpload;

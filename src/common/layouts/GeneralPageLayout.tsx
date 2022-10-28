@@ -1,18 +1,15 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
+import { LayoutProps } from 'types/Layout';
 import Navbar from '../components/navbar';
 
-export type GeneralPageLayoutProps = {
-  children: ReactNode,
-};
-
-const GeneralPageLayout: FC<GeneralPageLayoutProps> = ({ children }) => {
+const GeneralPageLayout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className="h-screen overflow-x-hidden relative font-poppins bg-background">
       <Navbar />
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default GeneralPageLayout
+export default GeneralPageLayout;

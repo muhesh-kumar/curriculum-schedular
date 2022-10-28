@@ -1,7 +1,10 @@
 import BtnNode from '@lib/BtnNode';
+import { BtnNodeProps } from 'types/BtnNode';
 
-const LeftBtnNode = ({ id, data }: any) => {
-  return <BtnNode hasLeftHandle={true} hasRightHandle={false} id={id} data={data} />
-}
+const LeftBtnNode = ({ id, data }: BtnNodeProps) => {
+  return (
+    <BtnNode hasLeftHandle={true} hasRightHandle={false} id={id} data={data} />
+  );
+};
 
-export default LeftBtnNode
+export default LeftBtnNode;
