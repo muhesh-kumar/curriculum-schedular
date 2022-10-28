@@ -40,7 +40,8 @@ const ProgressTracker = () => {
     new Edge('6', '7', !('6' in clickedNodes && clickedNodes['6'])),
   ];
 
-  const [nodes] = useNodesState(nodeList);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [nodes, setNodes, onNodesChange] = useNodesState(nodeList);
   // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   // const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
@@ -51,7 +52,7 @@ const ProgressTracker = () => {
         <ReactFlow
           nodes={nodes}
           edges={initialEdges}
-          // onNodesChange={onNodesChange}
+          onNodesChange={onNodesChange}
           // onEdgesChange={onEdgesChange}
           // onConnect={onConnect}
           nodeTypes={nodeTypes}
