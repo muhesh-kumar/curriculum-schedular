@@ -5,6 +5,7 @@ using Graph = unordered_map<string, vector<string>>;
 
 /* ===========Constants============= */
 const int NUM_COURSES = 53;
+const int NUM_WEEKS = 100;
 
 /* ===========Course============= */
 class Course {
@@ -65,6 +66,7 @@ unordered_map<string, string> course_code_course_name;
 unordered_map<string, int> indegree, outdegree;
 unordered_map<string, int> course_code_course_duration;
 vector<string> electives;
+unordered_map<string, int> dist;
 
 /* ===========Course Graph============= */
 Graph adj, radj;
@@ -126,7 +128,7 @@ void build_graph(int num_nodes = NUM_COURSES) {
       for (auto &prerequisitie_course_code: prerequisitie_course_codes) {
         // build an edge "prereq -------> course"
         adj[prerequisitie_course_code].push_back(course_code);
-        cout << prerequisitie_course_code <<  " -------> " << course_code << endl;
+        // cout << prerequisitie_course_code <<  " -------> " << course_code << endl;
       }
     }
   }
@@ -171,29 +173,38 @@ void find_electives() {
 }
 
 /*
- * Topologically sort the graph and identify the electives (i.e., nodes with 0 outdegree)
+ * Topologically sort the graph and find the start week for each course for the initial graph
 */
-// vector<string> topological_ordering;
-// void top_sort() {
-//   queue<string> q;
-//   for (auto &[course_code, indeg]: indegree) {
-//     if (indeg == 0) {
-//       q.push(course_code);
-//       electives.push_back(course_code);
-//     }
-//   }
-//   while (!q.empty()) {
-//     auto curr = q.front(); q.pop();
-//     topological_ordering.push_back(curr);
-//     for (auto &child: adj[curr]) {
-//       indegree[child]--;
-//       if (indegree[child] == 0) q.push(child);
-//     }
-//   }
+unordered_map<int, vector<string>> top_sort(unordered_map<string, int> &indegree, Graph &adj) {
+  unordered_map<string, int> dist;
+  unordered_map<int, vector<string>> course_start_week;
 
-//   // Ensuring that the graph is not disconnected
-//   assert(topological_ordering.size() == NUM_COURSES);
-// }
+  queue<string> q;
+  for (auto &[course_code, indeg]: indegree) {
+    if (indeg == 0) {
+      q.push(course_code);
+      dist[course_code] = course_code_course_duration[course_code];
+      course_start_week[0].push_back(course_code);
+      electives.push_back(course_code);
+    }
+  }
+
+  while (!q.empty()) {
+    auto curr = q.front(); q.pop();
+    // topological_ordering.push_back(curr);
+    
+    for (auto &child: adj[curr]) {
+      indegree[child]--;
+      if (indegree[child] == 0) {
+        q.push(child);
+        course_start_week[dist[curr]].push_back(child);
+        dist[child] = dist[curr] + course_code_course_duration[child];
+      }
+    }
+  }
+  
+  return course_start_week;
+}
 
 /*
  * Given an elective find the list of courses we need to take before taking 
@@ -228,6 +239,41 @@ vector<vector<string>> get_learning_tree_for_elective(
   return learning_tree_flattened;
 }
 
+pair<unordered_map<string, int>, Graph> get_graph_and_indegree_from_learning_tree(
+  vector<vector<string>> learning_tree
+) {
+  unordered_set<string> relevant_courses;
+  for (auto &course_codes: learning_tree) {
+    for (auto &course_code: course_codes) {
+      relevant_courses.insert(course_code);
+    }
+  }
+  
+  unordered_map<string, int> indegree;
+  Graph elective_adj;
+  for (auto &prerequisite_course_code: relevant_courses) {
+    for (auto &course_code: adj[prerequisite_course_code]) {
+      if (relevant_courses.count(course_code)) {
+        elective_adj[prerequisite_course_code].push_back(course_code);
+        indegree[course_code]++;
+      }
+    }
+  }
+  for (auto &course_code: relevant_courses) {
+    if (!indegree.count(course_code)) {
+      indegree[course_code] = 0;
+    }
+  }
+  // for (auto &[pre, courses]: elective_adj) {
+  //   cout << pre << " : ";
+  //   for (auto &c: courses) cout << c << " ";
+  //   cout << endl;
+  // }
+  // for (auto &[course_code, indeg]: indegree) cout << course_code << " " << indeg << endl;
+  
+  return make_pair(indegree, elective_adj);
+}
+
 void print_graph(Graph &graph) {
   for (auto &node: graph) {
     cout << node.first << " : ";
@@ -239,7 +285,12 @@ void print_graph(Graph &graph) {
 }
 
 void read_course_durations() {
-  
+  for (int i = 0; i < NUM_COURSES; i++) {
+    string course_code;
+    int course_duration;
+    cin >> course_code >> course_duration;
+    course_code_course_duration[course_code] = course_duration;
+  }
 }
 
 int32_t main() {
@@ -291,19 +342,43 @@ int32_t main() {
   // }
   // cout << electives.size() << endl;
   
-  for (auto &elective_course_code: electives) {
-    auto learning_tree = get_learning_tree_for_elective(elective_course_code);
-    cout << "Learning Tree for " << elective_course_code << endl;
-    for (int level = 0; level < (int) learning_tree.size(); level++) {
-      cout << level << " : \n";
-      for (auto &course_code: learning_tree[level]) {
-        cout << course_code << " " << course_code_course_name[course_code] << endl;
-      }
-      cout << "\n";
-    }
-  }
+  // for (auto &elective_course_code: electives) {
+  //   auto learning_tree = get_learning_tree_for_elective(elective_course_code);
+  //   cout << "Learning Tree for " << elective_course_code << endl;
+  //   for (int level = 0; level < (int) learning_tree.size(); level++) {
+  //     cout << level << " : \n";
+  //     for (auto &course_code: learning_tree[level]) {
+  //       cout << course_code << " " << course_code_course_name[course_code] << endl;
+  //     }
+  //     cout << "\n";
+  //   }
+  // }
+
+  /* 
+   * Build Reverse Graph and find the electives 
+  */
 
   read_course_durations();
+  // auto lt = get_learning_tree_for_elective(electives[2]);
+  // for (int i = 0; i < lt.size(); i++) {
+  //   cout << i << " : ";
+  //   for (auto &ai: lt[i]) cout << ai << " ";
+  //   cout << endl;
+  // }
+
+  auto [elective_indegree, elective_graph] = get_graph_and_indegree_from_learning_tree(
+    get_learning_tree_for_elective(electives[2])
+  );
+  auto course_start_week = top_sort(elective_indegree, elective_graph);
+
+  cout << "--------------------------------" << '\n';
+  for (auto &[start_week, course_codes]: course_start_week) {
+    cout << start_week << ": ";
+    for (auto &course_code : course_codes) {
+      cout << course_code << " ";
+    }
+    cout << "\n";
+  }
   
   return 0;
 }
