@@ -63,6 +63,7 @@ Curriculum::Curriculum(const vector<Course *> &_curriculum_courses) {
 vector<Course *> courses(NUM_COURSES);
 unordered_map<string, string> course_code_course_name;
 unordered_map<string, int> indegree, outdegree;
+unordered_map<string, int> course_code_course_duration;
 vector<string> electives;
 
 /* ===========Course Graph============= */
@@ -237,6 +238,10 @@ void print_graph(Graph &graph) {
   }
 }
 
+void read_course_durations() {
+  
+}
+
 int32_t main() {
   freopen("input.txt", "r", stdin); 
 
@@ -297,6 +302,8 @@ int32_t main() {
       cout << "\n";
     }
   }
+
+  read_course_durations();
   
   return 0;
 }
