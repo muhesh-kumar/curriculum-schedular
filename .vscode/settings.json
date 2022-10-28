@@ -1,0 +1,8 @@
+{
+  "editor.codeActionsOnSave": {
+    // tell VSCode to auto-fix eslint errors on save
+    "source.fixAll.eslint": true
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}

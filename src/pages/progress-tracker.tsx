@@ -1,4 +1,3 @@
-import { useCallback, useState } from 'react';
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -8,7 +7,7 @@ import ReactFlow, {
   // addEdge,
 } from 'reactflow';
 
-import GeneralPageLayout from '@layouts/GeneralPageLayout'
+import GeneralPageLayout from '@layouts/GeneralPageLayout';
 import withNoSSR from '@hoc/withNoSSR';
 
 import BtnNode from '@lib/BtnNode';
@@ -17,16 +16,16 @@ import RightBtnNode from '@lib/RightBtnNode';
 
 import { useGraphStore } from '@utils/store';
 import Edge from '@utils/Edge';
-import Node from '@utils/Node';
 
 import { nodeList } from '../dummy-data/nodeList';
 
 // 👇 you need to import the reactflow styles
 import 'reactflow/dist/style.css';
 
-
 const nodeTypes = {
-  btn: BtnNode, 'left-btn': LeftBtnNode, 'right-btn': RightBtnNode
+  btn: BtnNode,
+  'left-btn': LeftBtnNode,
+  'right-btn': RightBtnNode,
 };
 
 const ProgressTracker = () => {
@@ -41,7 +40,7 @@ const ProgressTracker = () => {
     new Edge('6', '7', !('6' in clickedNodes && clickedNodes['6'])),
   ];
 
-  const [nodes, setNodes, onNodesChange] = useNodesState(nodeList);
+  const [nodes] = useNodesState(nodeList);
   // const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   // const onConnect = useCallback((params: any) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
@@ -52,7 +51,7 @@ const ProgressTracker = () => {
         <ReactFlow
           nodes={nodes}
           edges={initialEdges}
-          onNodesChange={onNodesChange}
+          // onNodesChange={onNodesChange}
           // onEdgesChange={onEdgesChange}
           // onConnect={onConnect}
           nodeTypes={nodeTypes}
@@ -64,7 +63,7 @@ const ProgressTracker = () => {
         </ReactFlow>
       </div>
     </GeneralPageLayout>
-  )
-}
+  );
+};
 
-export default withNoSSR(ProgressTracker)
+export default withNoSSR(ProgressTracker);
