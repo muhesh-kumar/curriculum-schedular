@@ -175,14 +175,18 @@ void find_electives() {
 /*
  * Topologically sort the graph and find the start week for each course for the initial graph
 */
-unordered_map<int, vector<string>> top_sort(unordered_map<string, int> &indegree, Graph &adj) {
+map<int, vector<string>> top_sort(unordered_map<string, int> &indegree, Graph &adj) {
   unordered_map<string, int> dist;
-  unordered_map<int, vector<string>> course_start_week;
+  map<int, vector<string>> course_start_week;
+
+  // max(course duration of parent) for all parents for a given child node
+  unordered_map<string, int> mx_course_duration; 
 
   queue<string> q;
   for (auto &[course_code, indeg]: indegree) {
     if (indeg == 0) {
       q.push(course_code);
+      cout << course_code << " ";
       dist[course_code] = course_code_course_duration[course_code];
       course_start_week[0].push_back(course_code);
       electives.push_back(course_code);
@@ -195,10 +199,11 @@ unordered_map<int, vector<string>> top_sort(unordered_map<string, int> &indegree
     
     for (auto &child: adj[curr]) {
       indegree[child]--;
+      mx_course_duration[child] = max(mx_course_duration[child], dist[curr]);
       if (indegree[child] == 0) {
         q.push(child);
-        course_start_week[dist[curr]].push_back(child);
-        dist[child] = dist[curr] + course_code_course_duration[child];
+        course_start_week[mx_course_duration[child]].push_back(child);
+        dist[child] = mx_course_duration[child] + course_code_course_duration[child];
       }
     }
   }
@@ -342,9 +347,10 @@ int32_t main() {
   // }
   // cout << electives.size() << endl;
   
+  // int idx = 0;
   // for (auto &elective_course_code: electives) {
   //   auto learning_tree = get_learning_tree_for_elective(elective_course_code);
-  //   cout << "Learning Tree for " << elective_course_code << endl;
+  //   cout << idx << " : Learning Tree for " << elective_course_code << endl;
   //   for (int level = 0; level < (int) learning_tree.size(); level++) {
   //     cout << level << " : \n";
   //     for (auto &course_code: learning_tree[level]) {
@@ -352,6 +358,7 @@ int32_t main() {
   //     }
   //     cout << "\n";
   //   }
+  //   idx++;
   // }
 
   /* 
@@ -359,7 +366,7 @@ int32_t main() {
   */
 
   read_course_durations();
-  // auto lt = get_learning_tree_for_elective(electives[2]);
+  // auto lt = get_learning_tree_for_elective(electives[1]);
   // for (int i = 0; i < lt.size(); i++) {
   //   cout << i << " : ";
   //   for (auto &ai: lt[i]) cout << ai << " ";
@@ -367,8 +374,16 @@ int32_t main() {
   // }
 
   auto [elective_indegree, elective_graph] = get_graph_and_indegree_from_learning_tree(
-    get_learning_tree_for_elective(electives[2])
+    get_learning_tree_for_elective(electives[9])
   );
+  // for (auto &[pre, course_codes]: elective_graph) {
+  //   cout << pre << " : ";
+  //   for (auto &course_code : course_codes) {
+  //     cout << course_code << " ";
+  //   }
+  //   cout << endl;
+  // }
+
   auto course_start_week = top_sort(elective_indegree, elective_graph);
 
   cout << "--------------------------------" << '\n';
