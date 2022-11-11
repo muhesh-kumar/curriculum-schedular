@@ -12,7 +12,6 @@ const FileUpload = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <h1 className="text-4xl font-bold text-center">Upload Curriculum</h1>
       <section className="border-4 border-dashed border-primaryDark rounded-lg flex flex-col px-10 py-10 bg-gradient-to-t from-gray-300 to-primaryLight">
         <div {...getRootProps({ className: 'dropzone' })}>
           <input {...getInputProps()} />

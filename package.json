@@ -12,6 +12,8 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
+    "@heroicons/react": "^2.0.13",
     "axios": "^0.27.2",
     "clsx": "^1.2.1",
     "formik": "^2.2.9",
