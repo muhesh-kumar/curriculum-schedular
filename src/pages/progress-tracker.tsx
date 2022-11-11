@@ -1,3 +1,4 @@
+import { useSession } from 'next-auth/react';
 import ReactFlow, {
   MiniMap,
   Controls,
@@ -26,7 +27,17 @@ const nodeTypes = {
 };
 
 const ProgressTracker = () => {
+  const { status } = useSession();
+
   const clickedNodes = useGraphStore((state) => state.clickedNodes);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [nodes, setNodes, onNodesChange] = useNodesState(nodeList);
+
+  if (status === 'loading') return <p>Loading...</p>;
+
+  if (status === 'unauthenticated')
+    return <p>Access Denied! Please Sign in to view this page</p>;
+
   const initialEdges = [
     new Edge('1', '2', !('1' in clickedNodes && clickedNodes['1'])),
     new Edge('1', '3', !('1' in clickedNodes && clickedNodes['1'])),
@@ -36,9 +47,6 @@ const ProgressTracker = () => {
     new Edge('5', '7', !('5' in clickedNodes && clickedNodes['5'])),
     new Edge('6', '7', !('6' in clickedNodes && clickedNodes['6'])),
   ];
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [nodes, setNodes, onNodesChange] = useNodesState(nodeList);
 
   return (
     <GeneralPageLayout>
