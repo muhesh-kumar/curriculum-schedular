@@ -18,3 +18,18 @@ export const useGraphStore = create<GraphStore>((set) => ({
       },
     })),
 }));
+
+type ElectiveStore = {
+  chosenElective: string;
+  setChosenElective: (elective: string) => void;
+};
+
+export const useElectiveStore = create<ElectiveStore>((set) => ({
+  chosenElective: '',
+
+  setChosenElective: (elective: string) => {
+    set(() => ({
+      chosenElective: elective,
+    }));
+  },
+}));
