@@ -103,8 +103,9 @@ void read_courses(int num_courses = NUM_COURSES) {
     string course_name;
     for (auto &ai: words) {
       if (ai == course_code) continue;
-      course_name += ai;
+      course_name += ai + " ";
     }
+    course_name.pop_back();
 
     course_code_course_name[course_code] = course_name;
   }
@@ -326,9 +327,11 @@ int32_t main() {
   // }
   
   find_electives();
-  // for (auto &elective: electives)
-  //   cout << elective << " ";
-  // cout << endl;
+  cout << "[";
+  for (auto &elective: electives)
+    cout << "'" << elective << " - " << course_code_course_name[elective] << "', ";
+    cout << "]";
+  cout << endl;
 
   // for (auto [course_code, v] : course_code_course_name) {
   //   cout << course_code << " " << indegree[course_code] << " " << outdegree[course_code] << endl;
@@ -384,16 +387,16 @@ int32_t main() {
   //   cout << endl;
   // }
 
-  auto course_start_week = top_sort(elective_indegree, elective_graph);
+  // auto course_start_week = top_sort(elective_indegree, elective_graph);
 
-  cout << "--------------------------------" << '\n';
-  for (auto &[start_week, course_codes]: course_start_week) {
-    cout << start_week << ": ";
-    for (auto &course_code : course_codes) {
-      cout << course_code << " ";
-    }
-    cout << "\n";
-  }
+  // cout << "--------------------------------" << '\n';
+  // for (auto &[start_week, course_codes]: course_start_week) {
+  //   cout << start_week << ": ";
+  //   for (auto &course_code : course_codes) {
+  //     cout << course_code << " ";
+  //   }
+  //   cout << "\n";
+  // }
   
   return 0;
 }
