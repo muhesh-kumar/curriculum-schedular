@@ -100,6 +100,7 @@ const topSort = (indegree: StringIntMap, adj: Graph) => {
   const maxCourseDuration: StringIntMap = {};
 
   const q = new Queue<string>();
+  courseStartWeek[0] = [];
   for (const [courseCode, indeg] of Object.entries(indegree)) {
     if (indeg != 0) continue;
     q.enqueue(courseCode);
@@ -134,6 +135,7 @@ const getLearningTreeForElective = (electiveCourseCode: string) => {
     if (level in learningTree) learningTree[level].push(courseCode);
     else learningTree[level] = [courseCode];
 
+    console.log(courseCode);
     for (const childCourseCode of radj[courseCode]) {
       if (!visited.has(childCourseCode)) {
         dfs(childCourseCode, level + 1);
@@ -163,6 +165,7 @@ const getGraphAndIndegreeFromLearningTree = (
   const electiveAdj: Graph = {};
 
   for (const prerequisiteCourseCode of relevantCourses) {
+    electiveAdj[prerequisiteCourseCode] = [];
     for (const courseCode of adj[prerequisiteCourseCode]) {
       if (relevantCourses.has(courseCode)) {
         electiveAdj[prerequisiteCourseCode].push(courseCode);

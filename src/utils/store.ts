@@ -25,7 +25,7 @@ type ElectiveStore = {
 };
 
 export const useElectiveStore = create<ElectiveStore>((set) => ({
-  chosenElective: '',
+  chosenElective: 'IC002',
 
   setChosenElective: (elective: string) => {
     set(() => ({
