@@ -122,6 +122,7 @@ const topSort = (indegree: StringIntMap, adj: Graph) => {
       }
     }
   }
+  console.log(maxCourseDuration);
 
   return courseStartWeek;
 };
