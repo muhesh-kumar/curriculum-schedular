@@ -195,6 +195,38 @@ const getGraphAndIndegreeFromLearningTree = (
   return [indegree, electiveAdj];
 };
 
+export const getEdgeListFromElective = (chosenElective: string) => {
+  const edgeList: [string, string][] = [];
+
+  const visited = new Set<string>();
+  const dfs = (courseCode: string) => {
+    visited.add(courseCode);
+    console.log('edge list finding', courseCode);
+    for (const prerequisiteCourseCode of radj[courseCode]) {
+      if (!visited.has(prerequisiteCourseCode)) {
+        edgeList.push([courseCode, prerequisiteCourseCode]);
+        dfs(prerequisiteCourseCode);
+      }
+    }
+  };
+  dfs(chosenElective);
+
+  return edgeList;
+};
+
+export const getRelevantCoursesGivenEdgeList = (
+  edgeList: [string, string][],
+) => {
+  const courses = new Set<string>();
+
+  for (const [from, to] of edgeList) {
+    courses.add(from);
+    courses.add(to);
+  }
+
+  return Array.from(courses);
+};
+
 export const getCourseStartWeeks = (chosenElective: string) => {
   buildReverseGraph();
 

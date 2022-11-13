@@ -33,6 +33,7 @@ const BtnNode = ({
       >
         <button name="btn" onClick={handleClick}>
           {data.label}{' '}
+          <p className="text-sm border-black">(Week {data.weekNumber})</p>
         </button>
       </div>
       {hasRightHandle && (

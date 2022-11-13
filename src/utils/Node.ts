@@ -12,7 +12,7 @@ type PositionType = {
 
 type DataType = {
   label: string;
-  id: number;
+  weekNumber: number;
 };
 
 export default class Node {
@@ -20,6 +20,7 @@ export default class Node {
   position: PositionType;
   data: DataType;
   sourcePosition: Position;
+  targetPosition: Position;
   type: string;
 
   constructor(
@@ -27,12 +28,14 @@ export default class Node {
     position: PositionType,
     data: DataType,
     sourcePosition: Position,
+    targetPosition: Position,
     type: string,
   ) {
     this.id = id;
     this.position = position;
     this.data = data;
     this.sourcePosition = sourcePosition;
+    this.targetPosition = targetPosition;
     this.type = type;
   }
 }
