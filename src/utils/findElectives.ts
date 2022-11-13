@@ -99,6 +99,11 @@ const topSort = (indegree: StringIntMap, adj: Graph) => {
   const courseStartWeek: IntStringArrayMap = {};
   const maxCourseDuration: StringIntMap = {};
 
+  // Initializing maxCourseDuration
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  for (const [courseCode, _] of Object.entries(indegree))
+    maxCourseDuration[courseCode] = 0;
+
   const q = new Queue<string>();
   courseStartWeek[0] = [];
   for (const [courseCode, indeg] of Object.entries(indegree)) {
@@ -110,19 +115,25 @@ const topSort = (indegree: StringIntMap, adj: Graph) => {
 
   while (!q.isEmpty()) {
     const curr = q.dequeue() ?? '';
+    console.log('curr: ', curr);
 
     for (const child of adj[curr]) {
       indegree[child]--;
+      console.log('child:', child, 'indegree:', indegree[child]);
       maxCourseDuration[child] = Math.max(maxCourseDuration[child], dist[curr]);
 
       if (indegree[child] == 0) {
         q.enqueue(child);
-        courseStartWeek[maxCourseDuration[child]].push(child);
+
+        if (maxCourseDuration[child] in courseStartWeek)
+          courseStartWeek[maxCourseDuration[child]].push(child);
+        else courseStartWeek[maxCourseDuration[child]] = [child];
+
         dist[child] = maxCourseDuration[child] + courses[child].Duration;
       }
     }
   }
-  console.log(maxCourseDuration);
+  console.log('maxcourseduration: ', maxCourseDuration);
 
   return courseStartWeek;
 };
@@ -161,9 +172,13 @@ const getGraphAndIndegreeFromLearningTree = (
   const relevantCourses = new Set<string>();
   for (const courseCodes of learningTree)
     for (const courseCode of courseCodes) relevantCourses.add(courseCode);
+  console.log('relevant courses', relevantCourses);
 
   const indegree: StringIntMap = {};
   const electiveAdj: Graph = {};
+
+  // Initializing indegrees
+  for (const courseCode of relevantCourses) indegree[courseCode] = 0;
 
   for (const prerequisiteCourseCode of relevantCourses) {
     electiveAdj[prerequisiteCourseCode] = [];
@@ -175,8 +190,7 @@ const getGraphAndIndegreeFromLearningTree = (
     }
   }
 
-  for (const courseCode of relevantCourses)
-    if (!(courseCode in indegree)) indegree[courseCode] = 0;
+  console.log('indegree map: ', indegree);
 
   return [indegree, electiveAdj];
 };
