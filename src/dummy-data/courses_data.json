@@ -1,0 +1,303 @@
+{
+  "IC001": {
+    "Course Name": "Python for Everybody",
+    "Duration": 10,
+    "Prerequisites": []
+  },
+  "IC002": {
+    "Course Name": "Introduction to Computer Science and Programming using Python",
+    "Duration": 9,
+    "Prerequisites": ["P004"]
+  },
+  "CP001": {
+    "Course Name": "How to Code - Simple Data",
+    "Duration": 7,
+    "Prerequisites": []
+  },
+  "CP002": {
+    "Course Name": "How to Code - Complex Data",
+    "Duration": 6,
+    "Prerequisites": ["CP001"]
+  },
+  "CP003": {
+    "Course Name": "Programming Languages, Part A",
+    "Duration": 5,
+    "Prerequisites": ["P007"]
+  },
+  "CP004": {
+    "Course Name": "Programming Languages, Part B",
+    "Duration": 3,
+    "Prerequisites": ["CP003"]
+  },
+  "CP005": {
+    "Course Name": "Programming Languages, Part C",
+    "Duration": 3,
+    "Prerequisites": ["CP004"]
+  },
+  "CP006": {
+    "Course Name": "Object-Oriented Design",
+    "Duration": 4,
+    "Prerequisites": ["P002"]
+  },
+  "CP007": {
+    "Course Name": "Design Patterns",
+    "Duration": 4,
+    "Prerequisites": ["CP006"]
+  },
+  "CP008": {
+    "Course Name": "Software Architecture",
+    "Duration": 4,
+    "Prerequisites": ["CP007"]
+  },
+  "CM001": {
+    "Course Name": "Calculus 1A: Differentiation",
+    "Duration": 13,
+    "Prerequisites": ["P008"]
+  },
+  "CM002": {
+    "Course Name": "Calculus 1B: Integration",
+    "Duration": 13,
+    "Prerequisites": ["CM001"]
+  },
+  "CM003": {
+    "Course Name": "Calculus 1C: Coordinate Systems & Infinite Series",
+    "Duration": 6,
+    "Prerequisites": ["CM002"]
+  },
+  "CM004": {
+    "Course Name": "Mathematics for Computer Science",
+    "Duration": 13,
+    "Prerequisites": ["CM003"]
+  },
+  "CST001": {
+    "Course Name": "The Missing Semester of Your CS Education",
+    "Duration": 2,
+    "Prerequisites": []
+  },
+  "CRS001": {
+    "Course Name": "Build a Modern Computer from First Principles: From Nand to Tetris",
+    "Duration": 6,
+    "Prerequisites": []
+  },
+  "CRS002": {
+    "Course Name": "Build a Modern Computer from First Principles: Nand to Tetris Part II",
+    "Duration": 6,
+    "Prerequisites": []
+  },
+  "CRS003": {
+    "Course Name": "Operating Systems: Three Easy Pieces",
+    "Duration": 11,
+    "Prerequisites": []
+  },
+  "CRS004": {
+    "Course Name": "Computer Networking: a Top-Down Approach",
+    "Duration": 8,
+    "Prerequisites": []
+  },
+  "CT001": {
+    "Course Name": "Divide and Conquer, Sorting and Searching, and Randomized Algorithms",
+    "Duration": 4,
+    "Prerequisites": ["CM004"]
+  },
+  "CT002": {
+    "Course Name": "Graph Search, Shortest Paths, and Data Structures",
+    "Duration": 4,
+    "Prerequisites": ["CT001"]
+  },
+  "CT003": {
+    "Course Name": "Greedy Algorithms, Minimum Spanning Trees, and Dynamic Programming",
+    "Duration": 4,
+    "Prerequisites": ["CT002"]
+  },
+  "CT004": {
+    "Course Name": "Shortest Paths Revisited, NP-Complete Problems and What To Do About Them",
+    "Duration": 4,
+    "Prerequisites": ["CT003"]
+  },
+  "CS001": {
+    "Course Name": "Cybersecurity Fundamentals",
+    "Duration": 8,
+    "Prerequisites": ["P010"]
+  },
+  "CS002": {
+    "Course Name": "Principles of Secure Coding",
+    "Duration": 4,
+    "Prerequisites": ["CS001"]
+  },
+  "CS003": {
+    "Course Name": "Identifying Security Vulnerabilities",
+    "Duration": 4,
+    "Prerequisites": ["P010"]
+  },
+  "CS004": {
+    "Course Name": "Identifying Security Vulnerabilities in C/C++ Programming or Exploiting and Securing Vulnerabilities in Java Applications",
+    "Duration": 4,
+    "Prerequisites": ["P003", "P005", "P006"]
+  },
+  "CA001": {
+    "Course Name": "Databases: Modeling and Theory",
+    "Duration": 2,
+    "Prerequisites": [
+      "CP001",
+      "CP002",
+      "CP003",
+      "CP004",
+      "CP005",
+      "CP006",
+      "CP007",
+      "CP008"
+    ]
+  },
+  "CA002": {
+    "Course Name": "Databases: Relational Databases and SQL",
+    "Duration": 2,
+    "Prerequisites": [
+      "CP001",
+      "CP002",
+      "CP003",
+      "CP004",
+      "CP005",
+      "CP006",
+      "CP007",
+      "CP008"
+    ]
+  },
+  "CA003": {
+    "Course Name": "Databases: Semistructured Data",
+    "Duration": 2,
+    "Prerequisites": [
+      "CP001",
+      "CP002",
+      "CP003",
+      "CP004",
+      "CP005",
+      "CP006",
+      "CP007",
+      "CP008"
+    ]
+  },
+  "CA004": {
+    "Course Name": "Machine Learning",
+    "Duration": 11,
+    "Prerequisites": ["P003"]
+  },
+  "CA005": {
+    "Course Name": "Computer Graphics",
+    "Duration": 6,
+    "Prerequisites": ["P001", "P002", "P003"]
+  },
+  "CA006": {
+    "Course Name": "Software Engineering: Introduction",
+    "Duration": 6,
+    "Prerequisites": [
+      "CP001",
+      "CP002",
+      "CP003",
+      "CP004",
+      "CP005",
+      "CP006",
+      "CP007",
+      "CP008"
+    ]
+  },
+  "CE001": {
+    "Course Name": "Ethics, Technology and Engineering",
+    "Duration": 9,
+    "Prerequisites": []
+  },
+  "CE002": {
+    "Course Name": "Intellectual Property Law in Digital Age",
+    "Duration": 4,
+    "Prerequisites": []
+  },
+  "CE003": {
+    "Course Name": "Data Privacy Fundamentals",
+    "Duration": 3,
+    "Prerequisites": []
+  },
+  "AP001": {
+    "Course Name": "Parallel Programming",
+    "Duration": 4,
+    "Prerequisites": ["P009"]
+  },
+  "AP002": {
+    "Course Name": "Compilers",
+    "Duration": 9,
+    "Prerequisites": []
+  },
+  "AP003": {
+    "Course Name": "Introduction to Haskell",
+    "Duration": 14,
+    "Prerequisites": []
+  },
+  "AP004": {
+    "Course Name": "Learn Prolog Now!",
+    "Duration": 12,
+    "Prerequisites": []
+  },
+  "AP005": {
+    "Course Name": "Software Debugging",
+    "Duration": 8,
+    "Prerequisites": ["IC001", "CP006"]
+  },
+  "AP006": {
+    "Course Name": "Software Testing",
+    "Duration": 4,
+    "Prerequisites": ["IC001"]
+  },
+  "FP001": {
+    "Course Name": "Final Project",
+    "Duration": 30,
+    "Prerequisites": []
+  },
+  "P001": {
+    "Course Name": "C++ For Everybody",
+    "Duration": 13,
+    "Prerequisites": []
+  },
+  "P002": {
+    "Course Name": "Java For Everybody",
+    "Duration": 12,
+    "Prerequisites": []
+  },
+  "P003": {
+    "Course Name": "Linear Algebra",
+    "Duration": 11,
+    "Prerequisites": []
+  },
+  "P004": {
+    "Course Name": "High School Algebra",
+    "Duration": 2,
+    "Prerequisites": []
+  },
+  "P005": {
+    "Course Name": " Probability",
+    "Duration": 8,
+    "Prerequisites": []
+  },
+  "P006": {
+    "Course Name": " Basic Cs",
+    "Duration": 6,
+    "Prerequisites": []
+  },
+  "P007": {
+    "Course Name": "How To Code (Hear Instructor)",
+    "Duration": 4,
+    "Prerequisites": []
+  },
+  "P008": {
+    "Course Name": "High School Math",
+    "Duration": 2,
+    "Prerequisites": []
+  },
+  "P009": {
+    "Course Name": "Scala Programming",
+    "Duration": 18,
+    "Prerequisites": []
+  },
+  "P010": {
+    "Course Name": "C Programming",
+    "Duration": 11,
+    "Prerequisites": []
+  }
+}
