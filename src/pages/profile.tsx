@@ -4,10 +4,21 @@ import { useSession, signIn } from 'next-auth/react';
 import GeneralPageLayout from '@layouts/GeneralPageLayout';
 import CourseCard from '@elements/course-card';
 
+import { useElectiveStore } from '@utils/store';
+import {
+  getRelevantCoursesGivenEdgeList,
+  getEdgeListFromElective,
+} from '@utils/findElectives';
+
 const ProfilePage = () => {
   const { data: session, status } = useSession({
     required: true,
   });
+
+  const chosenElective = useElectiveStore((state) => state.chosenElective);
+  const edgeList = getEdgeListFromElective(chosenElective);
+  const courses = getRelevantCoursesGivenEdgeList(edgeList);
+  console.log('courses in profile: ', courses);
 
   if (status !== 'authenticated') {
     return (
@@ -50,10 +61,21 @@ const ProfilePage = () => {
 
         {/* TODO: Separate it out as a component later */}
         {/* Electives Taken */}
-        <div className="flex flex-col items-center gap-3">
+        <div className="flex flex-col items-center gap-5">
           <h2 className="text-3xl">Electives Taken</h2>
-          <div className="flex gap-5">
-            <CourseCard
+          <div className="flex gap-5 flex-wrap justify-center">
+            {courses.map((course: string) => {
+              return (
+                <CourseCard
+                  key={course}
+                  courseName={course}
+                  weeksToGo={(Math.ceil(Math.random() * 34) % 34) + 1}
+                  hoursToGo={(Math.ceil(Math.random() * 200) % 200) + 1}
+                  percentageCompleted={Math.ceil(Math.random() * 101) % 101}
+                />
+              );
+            })}
+            {/* <CourseCard
               courseName="Machine Learning"
               weeksToGo={12}
               hoursToGo={150}
@@ -70,7 +92,7 @@ const ProfilePage = () => {
               weeksToGo={9}
               hoursToGo={33}
               percentageCompleted={22}
-            />
+            /> */}
           </div>
         </div>
       </div>
