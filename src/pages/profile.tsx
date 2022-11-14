@@ -62,7 +62,7 @@ const ProfilePage = () => {
         {/* TODO: Separate it out as a component later */}
         {/* Electives Taken */}
         <div className="flex flex-col items-center gap-5">
-          <h2 className="text-3xl">Electives Taken</h2>
+          <h2 className="text-3xl">Courses Taken</h2>
           <div className="flex gap-5 flex-wrap justify-center">
             {courses.map((course: string) => {
               return (

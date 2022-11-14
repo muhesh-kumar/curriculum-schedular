@@ -6,6 +6,7 @@
       "@dummy-data/*": ["dummy-data/*"],
       "@lib/*": ["lib/*"],
       "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
       "@modules/*": ["modules/*"],
       "@layouts/*": ["common/layouts/*"],
       "@elements/*": ["common/components/elements/*"],

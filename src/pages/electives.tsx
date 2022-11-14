@@ -1,14 +1,15 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { FormEvent } from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 
-import { useElectiveStore } from '@utils/store';
 import GeneralPageLayout from '@layouts/GeneralPageLayout';
 import Dropdown from '@components/dropdown';
 import Btn from '@elements/btn';
 
 import { findElectives } from '@utils/findElectives';
+import { useElectiveStore } from '@utils/store';
 
 const Electives: NextPage = () => {
   const router = useRouter();

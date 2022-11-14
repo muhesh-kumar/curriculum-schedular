@@ -9,18 +9,18 @@ type CourseCardProps = {
 };
 
 const getRandomColor = () => {
-  const colors = [
-    'red-500',
-    'blue-500',
-    'green-500',
-    'yellow-500',
-    'cyan-500',
-    'orange-500',
-  ];
+  // const colors = [
+  //   'red-500',
+  //   'blue-500',
+  //   'green-500',
+  //   'yellow-500',
+  //   'cyan-500',
+  //   'orange-500',
+  // ];
 
-  const color = 'from-' + colors[Math.floor(Math.random() * colors.length)];
-  console.log(color);
-  return color;
+  // const color = 'from-' + colors[Math.floor(Math.random() * colors.length)];
+  // console.log(color);
+  // return color;
 
   // FIXME: make it work!!
   // const color = "from-[#000000]";
@@ -29,6 +29,7 @@ const getRandomColor = () => {
   // color = "from-[#" + Math.floor(Math.random() * 16777215).toString(16) + "]";
   // console.log("2: ", color);
   // return color;
+  return 'from-primaryDark';
 };
 
 // TODO: give proper type

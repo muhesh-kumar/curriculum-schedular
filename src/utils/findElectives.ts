@@ -1,17 +1,7 @@
 import Queue from '@lib/Queue';
 import coursesData from '@dummy-data/courses_data.json';
 
-type StringStringMap = {
-  [key: string]: string;
-};
-
-type StringIntMap = {
-  [key: string]: number;
-};
-
-type IntStringArrayMap = {
-  [key: number]: string[];
-};
+import { StringStringMap, StringIntMap, IntStringArrayMap } from 'types/maps';
 
 type Graph = {
   [key: string]: string[];
@@ -36,6 +26,7 @@ const readCourses = () => {
   for (const [courseCode, course] of Object.entries(courses)) {
     courseCodeCourseName[courseCode] = course['Course Name'];
     adj[courseCode] = [];
+    radj[courseCode] = [];
     indegree[courseCode] = 0;
     outdegree[courseCode] = 0;
   }
@@ -148,7 +139,7 @@ const getLearningTreeForElective = (electiveCourseCode: string) => {
     else learningTree[level] = [courseCode];
 
     console.log(courseCode);
-    for (const childCourseCode of radj[courseCode]) {
+    for (const childCourseCode of radj[courseCode] ?? []) {
       if (!visited.has(childCourseCode)) {
         dfs(childCourseCode, level + 1);
       }
@@ -182,7 +173,7 @@ const getGraphAndIndegreeFromLearningTree = (
 
   for (const prerequisiteCourseCode of relevantCourses) {
     electiveAdj[prerequisiteCourseCode] = [];
-    for (const courseCode of adj[prerequisiteCourseCode]) {
+    for (const courseCode of adj[prerequisiteCourseCode] ?? []) {
       if (relevantCourses.has(courseCode)) {
         electiveAdj[prerequisiteCourseCode].push(courseCode);
         indegree[courseCode]++;
@@ -202,7 +193,7 @@ export const getEdgeListFromElective = (chosenElective: string) => {
   const dfs = (courseCode: string) => {
     visited.add(courseCode);
     console.log('edge list finding', courseCode);
-    for (const prerequisiteCourseCode of radj[courseCode]) {
+    for (const prerequisiteCourseCode of radj[courseCode] ?? []) {
       if (!visited.has(prerequisiteCourseCode)) {
         edgeList.push([courseCode, prerequisiteCourseCode]);
         dfs(prerequisiteCourseCode);
