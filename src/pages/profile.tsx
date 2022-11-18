@@ -10,6 +10,8 @@ import {
   getEdgeListFromElective,
 } from '@utils/findElectives';
 
+const getUserNameFromName = (name: string): string => name.split(' ').join('');
+
 const ProfilePage = () => {
   const { data: session, status } = useSession({
     required: true,
@@ -53,7 +55,7 @@ const ProfilePage = () => {
             </div>
             <div className="flex flex-col gap-2 items-end">
               <p>{session?.user?.name}</p>
-              <p>MuheshKumar</p>
+              <p>{getUserNameFromName(session?.user?.name ?? '')}</p>
               <p>{session?.user?.email}</p>
             </div>
           </div>
