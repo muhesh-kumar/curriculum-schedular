@@ -4,6 +4,7 @@ import ReactFlow, {
   Controls,
   Background,
   useNodesState,
+  Position,
 } from 'reactflow';
 
 import GeneralPageLayout from '@layouts/GeneralPageLayout';
@@ -23,9 +24,6 @@ import {
   getCourseStartWeeks,
 } from '@utils/findElectives';
 
-// import { nodeList } from '../dummy-data/nodeList';
-
-import { Position } from 'reactflow';
 import 'reactflow/dist/style.css';
 
 const nodeTypes = {
@@ -92,16 +90,6 @@ const ProgressTracker = () => {
       ),
   );
   console.log(initialEdges);
-
-  // const initialEdges = [
-  //   new Edge('1', '2', !('1' in clickedNodes && clickedNodes['1'])),
-  //   new Edge('1', '3', !('1' in clickedNodes && clickedNodes['1'])),
-  //   new Edge('4', '3', !('4' in clickedNodes && clickedNodes['4'])),
-  //   new Edge('2', '7', !('2' in clickedNodes && clickedNodes['2'])),
-  //   new Edge('3', '7', !('3' in clickedNodes && clickedNodes['3'])),
-  //   new Edge('5', '7', !('5' in clickedNodes && clickedNodes['5'])),
-  //   new Edge('6', '7', !('6' in clickedNodes && clickedNodes['6'])),
-  // ];
 
   return (
     <GeneralPageLayout>

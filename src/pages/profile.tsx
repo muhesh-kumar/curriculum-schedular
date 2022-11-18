@@ -75,24 +75,6 @@ const ProfilePage = () => {
                 />
               );
             })}
-            {/* <CourseCard
-              courseName="Machine Learning"
-              weeksToGo={12}
-              hoursToGo={150}
-              percentageCompleted={46}
-            />
-            <CourseCard
-              courseName="Statistics"
-              weeksToGo={5}
-              hoursToGo={24}
-              percentageCompleted={86}
-            />
-            <CourseCard
-              courseName="Linear Algebra"
-              weeksToGo={9}
-              hoursToGo={33}
-              percentageCompleted={22}
-            /> */}
           </div>
         </div>
       </div>

@@ -1,8 +1,3 @@
-// {
-//   id: '1', position: { x: 100, y: 1 }, data: { label: 'Calculus', id: 1 },
-//   sourcePosition: Position.Right, type: 'btn'
-// },
-
 import { Position } from 'reactflow';
 
 type PositionType = {

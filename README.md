@@ -46,3 +46,9 @@
 - Design Inspiration: https://dribbble.com/shots/7193229-File-Upload-DailyUI-day031
 
 - React Library for drag and drop functionality: https://react-dropzone.js.org/
+
+### NextJS Security
+
+- https://nextjs.org/docs/advanced-features/security-headers
+
+- https://nextjs.org/docs/api-reference/next.config.js/headers
